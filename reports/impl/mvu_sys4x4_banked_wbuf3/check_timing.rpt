@@ -1,0 +1,258 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Sep 30 22:31:10 2026
+| Host         : bland3 running 64-bit Ubuntu 26.04.1 LTS
+| Command      : check_timing -verbose -file {/mnt/c/Users/duyda/Documents/ChatGPT/FPGA fly project/build/vivado/mvu_sys4x4_banked_wbuf3/check_timing.rpt}
+| Design       : mvu_systolic
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (111)
+6. checking no_output_delay (47)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (111)
+--------------------------------
+ There are 111 input ports with no input delay specified. (HIGH)
+
+cmd_dim[0]
+cmd_dim[1]
+cmd_dim[2]
+cmd_dim[3]
+cmd_dim[4]
+cmd_dim[5]
+cmd_dim[6]
+cmd_valid
+res_ready
+rst
+w_data[0]
+w_data[1]
+w_data[2]
+w_data[3]
+w_data[4]
+w_data[5]
+w_data[6]
+w_data[7]
+w_dst[0]
+w_dst[1]
+w_dst[2]
+w_dst[3]
+w_dst[4]
+w_dst[5]
+w_src[0]
+w_src[1]
+w_src[2]
+w_src[3]
+w_src[4]
+w_src[5]
+w_valid
+x_data[0]
+x_data[1]
+x_data[2]
+x_data[3]
+x_data[4]
+x_data[5]
+x_data[6]
+x_data[7]
+x_idx[0]
+x_idx[1]
+x_idx[2]
+x_idx[3]
+x_idx[4]
+x_idx[5]
+x_valid
+xb_bits[0]
+xb_bits[10]
+xb_bits[11]
+xb_bits[12]
+xb_bits[13]
+xb_bits[14]
+xb_bits[15]
+xb_bits[16]
+xb_bits[17]
+xb_bits[18]
+xb_bits[19]
+xb_bits[1]
+xb_bits[20]
+xb_bits[21]
+xb_bits[22]
+xb_bits[23]
+xb_bits[24]
+xb_bits[25]
+xb_bits[26]
+xb_bits[27]
+xb_bits[28]
+xb_bits[29]
+xb_bits[2]
+xb_bits[30]
+xb_bits[31]
+xb_bits[32]
+xb_bits[33]
+xb_bits[34]
+xb_bits[35]
+xb_bits[36]
+xb_bits[37]
+xb_bits[38]
+xb_bits[39]
+xb_bits[3]
+xb_bits[40]
+xb_bits[41]
+xb_bits[42]
+xb_bits[43]
+xb_bits[44]
+xb_bits[45]
+xb_bits[46]
+xb_bits[47]
+xb_bits[48]
+xb_bits[49]
+xb_bits[4]
+xb_bits[50]
+xb_bits[51]
+xb_bits[52]
+xb_bits[53]
+xb_bits[54]
+xb_bits[55]
+xb_bits[56]
+xb_bits[57]
+xb_bits[58]
+xb_bits[59]
+xb_bits[5]
+xb_bits[60]
+xb_bits[61]
+xb_bits[62]
+xb_bits[63]
+xb_bits[6]
+xb_bits[7]
+xb_bits[8]
+xb_bits[9]
+xb_valid
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (47)
+--------------------------------
+ There are 47 ports with no output delay specified. (HIGH)
+
+busy
+cmd_ready
+done
+err_dim
+res_data[0]
+res_data[10]
+res_data[11]
+res_data[12]
+res_data[13]
+res_data[14]
+res_data[15]
+res_data[16]
+res_data[17]
+res_data[18]
+res_data[19]
+res_data[1]
+res_data[20]
+res_data[21]
+res_data[22]
+res_data[23]
+res_data[24]
+res_data[25]
+res_data[26]
+res_data[27]
+res_data[28]
+res_data[29]
+res_data[2]
+res_data[30]
+res_data[31]
+res_data[3]
+res_data[4]
+res_data[5]
+res_data[6]
+res_data[7]
+res_data[8]
+res_data[9]
+res_idx[0]
+res_idx[1]
+res_idx[2]
+res_idx[3]
+res_idx[4]
+res_idx[5]
+res_last
+res_valid
+w_ready
+x_ready
+xb_ready
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+

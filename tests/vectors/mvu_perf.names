@@ -1,0 +1,16 @@
+0 perf_dim1
+1 perf_dim2
+2 perf_dim4
+3 perf_dim5
+4 perf_dim8
+5 perf_dim16
+6 perf_dim17
+7 perf_dim32
+8 perf_dim33
+9 perf_dim48
+10 perf_dim63
+11 perf_dim64
+12 perf_dim64_stall25
+13 perf_dim64_stall50
+14 perf_dim64_stall75
+15 perf_dim64_stall90

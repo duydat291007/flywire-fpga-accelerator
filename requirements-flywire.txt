@@ -1,0 +1,4 @@
+# Optional: only for re-running model/flywire/select_circuit.py on the raw FlyWire data
+-r requirements.txt
+pandas>=2.0
+scipy>=1.10

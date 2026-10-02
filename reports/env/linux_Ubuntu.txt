@@ -1,0 +1,68 @@
+
+== timestamp
+2026-09-30T21:01:20-04:00
+
+== identity
+WSL_DISTRO_NAME=Ubuntu
+Linux bland3 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 GNU/Linux
+Linux version 6.18.33.2-microsoft-standard-WSL2 (root@f1bbfb02316b) (gcc (GCC) 13.2.0, GNU ld (GNU Binutils) 2.41) #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+VERSION_ID="26.04"
+
+== environment type
+WSL2
+Windows C: mounted at /mnt/c
+[boot]
+systemd=true
+
+[user]
+default=bland_tofu
+
+== resources
+24
+               total        used        free      shared  buff/cache   available
+Mem:           7.3Gi       3.4Gi       1.7Gi        26Mi       2.4Gi       3.9Gi
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G   58G  898G   7% /
+C:\             807G  233G  574G  29% /mnt/c
+
+== project path as seen here
+/mnt/c/Users/duyda/Documents/ChatGPT/FPGA fly project
+
+== Vivado search
+on PATH: /opt/AMD/2025.2/Vivado/bin/vivado
+--- install: /opt/AMD/2025.2/Vivado
+XILINX_VIVADO=/opt/AMD/2025.2/Vivado
+vivado v2025.2 (64-bit)
+Tool Version Limit: 2025.11
+SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+Vivado Simulator v2025.2
+uvm lib: /opt/AMD/2025.2/Vivado/data/system_verilog/uvm_1.2
+device family: artix7
+cable drivers dir: /opt/AMD/2025.2/Vivado/data/xicom/cable_drivers
+
+== license environment
+(no license variables set)
+
+== board / USB visibility
+no lsusb or no FTDI/Digilent device visible
+no /dev/ttyUSB*
+
+== other tools
+iverilog   not found
+vvp        not found
+verilator  not found
+yosys      not found
+python3    /usr/bin/python3  Python 3.14.4
+pip3       not found
+git        /usr/bin/git  git version 2.53.0
+make       /usr/bin/make  GNU Make 4.4.1
+gcc        /usr/bin/gcc  gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+python 3.14.4
+  venv: yes
+  tkinter: no (ModuleNotFoundError)
+  numpy: no (ModuleNotFoundError)
+  serial: yes
+  pytest: no (ModuleNotFoundError)
+
+report written: /mnt/c/Users/duyda/Documents/ChatGPT/FPGA fly project/reports/env/linux_Ubuntu.txt

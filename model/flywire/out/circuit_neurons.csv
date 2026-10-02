@@ -1,0 +1,257 @@
+index,root_id,role,super_class,class,primary_type,side,nt_type,name
+0,720575940619287278,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2113
+1,720575940629025324,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2481
+2,720575940607737099,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2650
+3,720575940609919897,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2462
+4,720575940627490663,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2314
+5,720575940622413508,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2270
+6,720575940632510479,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2155
+7,720575940617181725,sensor: food (sugar GRN),sensory,gustatory,LB3,left,ACH,GNG.2701
+8,720575940630552151,sensor: food (sugar GRN),sensory,gustatory,LB3,right,GLUT,GNG.3648
+9,720575940631656504,sensor: food (sugar GRN),sensory,gustatory,LB3,right,,GNG.4712
+10,720575940614302370,sensor: food (sugar GRN),sensory,gustatory,LB3,right,ACH,GNG.3338
+11,720575940629884119,sensor: food (sugar GRN),sensory,gustatory,LB3,right,ACH,GNG.2545
+12,720575940641339611,sensor: food (sugar GRN),sensory,gustatory,LB3,right,,GNG.3232
+13,720575940609369180,sensor: food (sugar GRN),sensory,gustatory,LB3,right,,GNG.4714
+14,720575940622200233,sensor: food (sugar GRN),sensory,gustatory,LB3,right,ACH,GNG.3067
+15,720575940618709371,sensor: food (sugar GRN),sensory,gustatory,LB3,right,,GNG.4710
+16,720575940615053580,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.465
+17,720575940615462587,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.626
+18,720575940626626895,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.143
+19,720575940638456227,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.585
+20,720575940617176321,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.453
+21,720575940618312606,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.326
+22,720575940628454522,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.395
+23,720575940628081541,sensor: threat (looming),visual_projection,,LC4,left,ACH,LO.PVLP.697
+24,720575940618267227,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.198
+25,720575940618709158,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.403
+26,720575940618266459,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.199
+27,720575940628599895,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.705
+28,720575940628606713,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.165
+29,720575940618234715,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.256
+30,720575940620314612,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.166
+31,720575940625845447,sensor: threat (looming),visual_projection,,LC4,right,ACH,LO.PVLP.708
+32,720575940632047890,intermediate (food path left),central,,CB0393,left,ACH,GNG.168
+33,720575940612357618,intermediate (food path right),central,,CB0393,right,ACH,GNG.539
+34,720575940614492397,intermediate (threat path right),central,,PVLP151,right,ACH,PVLP.9
+35,720575940631919976,intermediate (food path right),central,,CB0964,right,GABA,GNG.1370
+36,720575940621573542,intermediate (food path right),central,,CB0833,right,GABA,GNG.688
+37,720575940622324991,intermediate (threat path left),central,,PVLP141,left,ACH,PVLP.SPS.1
+38,720575940626818085,intermediate (threat path right),central,,PVLP141,right,ACH,AVLP.SPS.2
+39,720575940626780222,intermediate (food path left),central,,CB3615,left,ACH,GNG.482
+40,720575940622339113,intermediate (threat path right),central,,PVLP130,right,GABA,PVLP.36
+41,720575940632030008,intermediate (food path left),central,,CB0438,right,GABA,GNG.370
+42,720575940612479205,intermediate (food path left),central,,CB0225,left,GABA,GNG.832
+43,720575940615961542,intermediate (food path left),ascending,AN,AN_GNG_WED_1,right,ACH,GNG.669
+44,720575940627167516,intermediate (food path right),descending,,DNge065,right,GABA,GNG.302
+45,720575940644968215,intermediate (food path right),central,,CB0202,right,ACH,GNG.237
+46,720575940638603709,intermediate (threat path right),central,,PVLP022,right,GABA,PVLP.AMMC.2
+47,720575940660223873,intermediate (food path left),central,,CB0247,left,ACH,GNG.394
+48,720575940625172238,intermediate (food path left),central,,CB0441,left,ACH,GNG.748
+49,720575940621902085,intermediate (food path right),ascending,AN,AN_GNG_68,right,GABA,GNG.1290
+50,720575940639468160,intermediate (food path right),ascending,AN,AN_AVLP_PVLP_2,right,ACH,AVLP.366
+51,720575940632381536,intermediate (threat path right),central,,PVLP024,right,GABA,PVLP.165
+52,720575940628802069,intermediate (food path left),central,,CB0880,left,ACH,GNG.881
+53,720575940631959097,intermediate (food path left),descending,,DNge042,left,ACH,GNG.240
+54,720575940620185515,intermediate (food path right),sensory,gustatory,LB3,right,ACH,GNG.2061
+55,720575940628029180,intermediate (food path right),central,,CB0225,right,GABA,GNG.789
+56,720575940621751792,intermediate (food path right),ascending,AN,AN_GNG_WED_1,left,ACH,GNG.899
+57,720575940619709972,intermediate (threat path left),central,,PVLP024,left,GABA,PVLP.138
+58,720575940628114684,intermediate (food path left),ascending,AN,AN_GNG_68,left,GABA,GNG.1209
+59,720575940620192677,intermediate (food path left),ascending,AN,AN_AVLP_PVLP_7,left,ACH,PVLP.99
+60,720575940615049578,intermediate (food path right),central,,CB3474,right,ACH,VES.GNG.49
+61,720575940635211115,intermediate (food path right),central,,CB0865,right,GABA,GNG.LAL.1
+62,720575940620173737,intermediate (threat path left),central,,PVLP022,left,GABA,PVLP.AMMC.3
+63,720575940633397023,intermediate (threat path left),central,,SAD064,right,ACH,PVLP.SAD.1
+64,720575940631021220,intermediate (food path right),central,,CB2820,right,ACH,GNG.2541
+65,720575940628815381,intermediate (food path right),central,,,left,GLUT,GNG.141
+66,720575940621771041,intermediate (food path left),central,,CB0438,left,GABA,GNG.312
+67,720575940632648868,intermediate (food path right),ascending,AN,AN_GNG_30,right,ACH,GNG.548
+68,720575940619973712,intermediate (food path left),central,,CB0118,left,GABA,GNG.298
+69,720575940607162754,intermediate (food path left),central,,CB0891,right,GABA,GNG.393
+70,720575940633277209,intermediate (food path left),central,,CB0118,right,GABA,GNG.292
+71,720575940638214461,intermediate (food path left),central,,CB1817b,right,ACH,SAD.AVLP.7
+72,720575940605648002,intermediate (food path left),central,,CL122_a,left,GABA,GNG.ICL.27
+73,720575940621635404,intermediate (food path left),central,,CB1161,left,ACH,GOR.8
+74,720575940612612094,intermediate (threat path left),central,,PVLP151,left,ACH,PVLP.11
+75,720575940620271636,intermediate (food path left),central,,CB0362,right,ACH,GNG.464
+76,720575940632815315,intermediate (food path right),ascending,AN,AN_AVLP_PVLP_7,right,ACH,AVLP.540
+77,720575940617019846,intermediate (threat path left),central,,CB0095,right,GABA,GNG.LAL.11
+78,720575940631740497,intermediate (threat path right),central,,CB0095,left,GABA,GNG.LAL.12
+79,720575940633293025,intermediate (food path left),descending,,DNge065,left,GABA,GNG.173
+80,720575940621835174,intermediate (food path left),central,,CB0202,left,ACH,GNG.315
+81,720575940636675214,intermediate (food path right),central,,CB0366,right,ACH,GNG.675
+82,720575940622027222,intermediate (food path right),descending,,DNge046,right,GABA,GNG.78
+83,720575940633995949,intermediate (threat path right),central,,PLP029,right,GLUT,SPS.31
+84,720575940626148520,intermediate (food path left),ascending,AN,AN_multi_117,left,ACH,GNG.1355
+85,720575940633170969,intermediate (food path left),central,,CB0296,left,GLUT,GNG.97
+86,720575940633316563,intermediate (food path left),central,,CB0226,left,ACH,GNG.VES.11
+87,720575940615624961,intermediate (food path right),ascending,AN,AN_multi_112,right,ACH,GNG.PVLP.7
+88,720575940635529464,intermediate (food path right),central,,PLP005,right,GLUT,PLP.ICL.2
+89,720575940627384851,intermediate (food path right),central,,IB068,right,ACH,SPS.VES.4
+90,720575940637763135,intermediate (food path right),central,,CB0062,right,GABA,GNG.955
+91,720575940630691958,intermediate (food path right),central,,CB0891,left,GABA,GNG.341
+92,720575940611347123,intermediate (threat path left),central,,PVLP130,left,GABA,PVLP.39
+93,720575940623579063,intermediate (threat path right),central,,PVLP137,right,ACH,AVLP.GNG.3
+94,720575940612387434,intermediate (food path right),central,,CB2820,right,ACH,GNG.2456
+95,720575940631383400,intermediate (threat path left),central,,PLP029,left,GLUT,SPS.34
+96,720575940628995331,intermediate (food path left),central,,CB0811,left,ACH,GNG.274
+97,720575940627403578,intermediate (food path right),descending,,DNge057,left,ACH,GNG.718
+98,720575940638910040,intermediate (threat path right),central,,PVLP151,right,ACH,PVLP.10
+99,720575940616194610,intermediate (food path right),central,,CB0819,right,GLUT,GNG.324
+100,720575940620015787,intermediate (food path left),ascending,AN,AN_GNG_158,left,GLUT,GNG.1644
+101,720575940620297819,intermediate (food path left),descending,,DNge123,left,GLUT,GNG.722
+102,720575940613347299,intermediate (food path right),descending,,DNge042,right,ACH,GNG.226
+103,720575940615528678,intermediate (threat path right),central,,PVLP024,right,GABA,PVLP.146
+104,720575940627490459,intermediate (food path left),descending,,DNge130,left,ACH,AMMC.10
+105,720575940641464309,intermediate (food path left),central,,SAD013,left,GABA,WED.IPS.49
+106,720575940635028591,intermediate (threat path left),central,,PVLP137,left,ACH,AVLP.GNG.4
+107,720575940617593233,intermediate (food path left),central,,CB0501,left,ACH,GNG.885
+108,720575940634726113,intermediate (food path left),central,,CB0597,right,GLUT,GNG.1147
+109,720575940626972056,intermediate (food path right),central,,CB0070,right,GABA,GNG.824
+110,720575940645045527,intermediate (food path right),descending,,DNge174,left,ACH,GNG.819
+111,720575940636345463,intermediate (food path left),central,,CB0441,right,ACH,GNG.746
+112,720575940618058667,intermediate (food path right),central,,CB2820,right,ACH,GNG.3190
+113,720575940630607738,intermediate (food path right),descending,,DNae007,left,ACH,VES.GNG.6
+114,720575940609268491,intermediate (threat path right),central,,SAD064,left,ACH,PVLP.AMMC.4
+115,720575940633198284,intermediate (food path left),central,,CB3812,left,ACH,GNG.435
+116,720575940648180868,intermediate (food path left),descending,,DNge057,right,ACH,GNG.522
+117,720575940647060532,intermediate (food path right),central,,CB0051,right,ACH,GNG.655
+118,720575940647966260,intermediate (threat path left),central,,PVLP024,left,GABA,PVLP.73
+119,720575940612648106,intermediate (food path right),descending,,DNg67,left,ACH,GNG.989
+120,720575940616313942,intermediate (threat path left),central,,AMMC-A1,left,ACH,PVLP.123
+121,720575940620982437,intermediate (food path right),central,,CB0620,left,GLUT,GNG.565
+122,720575940626295396,intermediate (food path right),descending,,DNg85,right,ACH,GNG.104
+123,720575940615672130,intermediate (food path right),central,,CB0709,right,ACH,GNG.236
+124,720575940629592567,intermediate (food path left),central,,CB0597,left,GLUT,GNG.1185
+125,720575940645503854,intermediate (food path right),central,,CB0445,right,ACH,GNG.605
+126,720575940628417280,intermediate (food path right),central,,CB0297,left,ACH,GNG.VES.14
+127,720575940623878891,intermediate (threat path left),central,,CB3114,left,ACH,GOR.PVLP.1
+128,720575940627111752,intermediate (threat path right),central,,PVLP019,right,GABA,AVLP.401
+129,720575940632648602,intermediate (threat path right),central,,LAL028,left,ACH,AVLP.LAL.6
+130,720575940655014049,intermediate (food path left),ascending,AN,AN_GNG_30,left,ACH,GNG.405
+131,720575940628972048,intermediate (food path left),central,,CB0542,left,ACH,GNG.657
+132,720575940611164770,intermediate (food path left),central,,CB0226,right,ACH,GNG.VES.10
+133,720575940618574749,intermediate (food path left),descending,,DNg35,left,ACH,GNG.2
+134,720575940614909506,intermediate (food path left),descending,,DNge123,right,GLUT,GNG.691
+135,720575940608339139,intermediate (food path right),central,,CB0410,right,GABA,GNG.931
+136,720575940626631754,intermediate (food path right),central,,CB0667,right,GABA,VES.75
+137,720575940627932746,intermediate (food path right),central,,VES074,right,ACH,VES.46
+138,720575940641363957,intermediate (threat path left),central,,AVLP429,left,ACH,AVLP.173
+139,720575940635166571,intermediate (food path right),descending,,DNg60,right,GABA,GNG.265
+140,720575940629256779,intermediate (threat path left),central,,PVLP019,left,GABA,PVLP.AVLP.122
+141,720575940632027975,intermediate (threat path left),central,,LAL028,right,ACH,AVLP.IPS.7
+142,720575940616103218,intermediate (food path left),central,,CB0062,left,GABA,GNG.816
+143,720575940630991311,intermediate (food path left),central,,CB0620,right,GLUT,GNG.469
+144,720575940621052848,intermediate (threat path right),optic,optic_lobe_intrinsic,Li24,right,GABA,LO.71
+145,720575940611633010,intermediate (threat path right),visual_projection,,LT51,right,GLUT,LO.VES.13
+146,720575940624846517,intermediate (threat path left),central,,WED125,left,ACH,WED.SPS.6
+147,720575940647882548,intermediate (threat path right),central,,CB1958,right,GLUT,SPS.240
+148,720575940617298747,intermediate (food path left),central,,CB0479,left,ACH,GNG.499
+149,720575940608144732,intermediate (threat path left),central,,CB0677,right,GABA,LAL.VES.2
+150,720575940644758308,intermediate (food path left),descending,,DNge046,left,GABA,GNG.106
+151,720575940629805950,intermediate (food path right),descending,,DNg35,right,ACH,GNG.7
+152,720575940626191306,intermediate (food path left),central,,CB0445,left,ACH,GNG.427
+153,720575940631168057,intermediate (food path left),descending,,DNg60,left,GABA,GNG.261
+154,720575940612603289,intermediate (food path right),descending,,DNg75,right,ACH,GNG.10
+155,720575940623702345,intermediate (threat path right),central,,CB0677,left,GABA,IPS.VES.1
+156,720575940617208065,intermediate (threat path right),ascending,AN,AN_multi_41,right,GABA,VES.GNG.62
+157,720575940628436282,intermediate (food path left),descending,,DNge075,right,ACH,GNG.884
+158,720575940612990321,intermediate (food path left),central,,CB0283,left,GABA,GNG.VES.8
+159,720575940619530187,intermediate (food path right),descending,,DNge100,right,ACH,GNG.372
+160,720575940623210445,intermediate (food path left),ascending,AN,AN_GNG_21,left,ACH,GNG.561
+161,720575940645866292,intermediate (food path left),central,,CB0362,left,ACH,GNG.555
+162,720575940620474278,intermediate (food path right),central,,CB0865,right,GABA,VES.LAL.4
+163,720575940630951424,intermediate (food path left),central,,CB0860,left,GABA,GNG.118
+164,720575940619934411,intermediate (food path left),sensory,mechanosensory,BM_Taste,left,ACH,GNG.1206
+165,720575940630689644,intermediate (food path right),descending,,DNpe030,left,ACH,GNG.850
+166,720575940624600840,intermediate (food path right),central,,CB0219,left,GLUT,GNG.66
+167,720575940631200327,intermediate (threat path right),central,,AMMC-A1,right,ACH,AVLP.PVLP.12
+168,720575940619588568,intermediate (food path left),central,,CB0964,left,GABA,GNG.987
+169,720575940621538142,intermediate (food path left),central,,CB0833,left,GABA,GNG.437
+170,720575940617442561,intermediate (threat path left),central,,WED116,left,ACH,AVLP.GOR.3
+171,720575940632648612,intermediate (food path left),central,,CB0008,left,GABA,GNG.174
+172,720575940624015287,intermediate (food path left),descending,,DNge075,left,ACH,GNG.1930
+173,720575940621319924,intermediate (food path left),central,,CB0283,right,GABA,GNG.VES.5
+174,720575940614763666,intermediate (food path left),central,,CB0366,left,ACH,GNG.550
+175,720575940611151406,intermediate (food path left),central,,CB0287,left,ACH,GNG.628
+176,720575940637635305,intermediate (food path left),central,,CB0172,right,GABA,GNG.70
+177,720575940605162924,intermediate (food path right),descending,,DNpe030,right,ACH,GNG.932
+178,720575940613327085,intermediate (food path right),central,,SAD074,right,GABA,SAD.SMP.1
+179,720575940630657271,intermediate (food path right),central,,IB061,right,ACH,IB.VES.2
+180,720575940628483322,intermediate (food path left),central,,CB3239,left,ACH,GNG.1820
+181,720575940625172750,intermediate (food path left),central,,CB0132,right,ACH,GNG.LAL.9
+182,720575940618165393,intermediate (food path right),central,,CB0580,left,GABA,GNG.ICL.1
+183,720575940617140597,intermediate (food path right),descending,,DNpe024,left,ACH,GOR.GNG.3
+184,720575940622335197,intermediate (food path right),central,,CB0407,right,ACH,GNG.947
+185,720575940617494877,intermediate (food path right),central,,CB0811,right,ACH,GNG.221
+186,720575940626309562,intermediate (threat path left),visual_projection,,LT61b,left,ACH,LO.AVLP.14
+187,720575940632365905,intermediate (food path left),central,,CB0051,left,ACH,GNG.683
+188,720575940625737776,intermediate (food path right),central,,CB0788,left,GLUT,GNG.459
+189,720575940619592768,intermediate (threat path left),visual_projection,,LC31b,left,ACH,LO.AVLP.30
+190,720575940618135256,intermediate (threat path left),central,,LAL028,left,ACH,AVLP.LAL.7
+191,720575940616864086,intermediate (food path left),central,,CB0788,right,GLUT,GNG.661
+192,720575940616167730,intermediate (food path right),central,,CB0296,right,GLUT,PRW.GNG.3
+193,720575940628779898,intermediate (threat path left),central,,CB3114,left,ACH,GOR.PVLP.3
+194,720575940644473760,intermediate (food path left),descending,,DNg84,left,ACH,GNG.18
+195,720575940616504977,intermediate (food path left),central,,CB0508,left,ACH,GNG.VES.15
+196,720575940633593548,intermediate (food path right),central,,CB0316,right,ACH,VES.23
+197,720575940612021475,intermediate (threat path left),visual_projection,,LC9,left,ACH,PVLP.207
+198,720575940620258480,intermediate (threat path left),central,,PVLP114,left,ACH,PVLP.VES.1
+199,720575940621501183,intermediate (food path right),central,,CB2164,right,ACH,AVLP.2279
+200,720575940615391638,intermediate (threat path left),visual_projection,,LT82,left,ACH,LO.PLP.5
+201,720575940623533749,intermediate (threat path left),central,,PS049,left,GABA,SPS.56
+202,720575940628678991,intermediate (threat path right),central,,WED125,right,ACH,WED.SPS.7
+203,720575940628891396,intermediate (food path left),central,,CB0244,left,ACH,VES.GNG.17
+204,720575940620441024,intermediate (food path right),central,ALPN,Z_vPNml1,right,GABA,GNG.SCL.4
+205,720575940630853436,intermediate (food path right),central,,SLP215,right,ACH,SLP.FLA.1
+206,720575940635953038,intermediate (food path right),central,,VES073,right,ACH,VES.LAL.8
+207,720575940620887536,intermediate (food path left),ascending,AN,AN_AVLP_PVLP_2,left,ACH,PVLP.86
+208,720575940615271124,intermediate (food path left),central,,CB2424,left,ACH,AVLP.2186
+209,720575940610055982,intermediate (food path right),central,,CB0287,right,ACH,GNG.725
+210,720575940620657857,intermediate (food path right),central,,CB0172,left,GABA,GNG.91
+211,720575940626023153,intermediate (threat path left),central,,LAL028,right,ACH,AVLP.IPS.6
+212,720575940631393484,intermediate (food path left),sensory,gustatory,LB3,left,ACH,GNG.2665
+213,720575940627814728,intermediate (food path right),central,,CB0278,left,ACH,GNG.231
+214,720575940628319899,intermediate (food path right),central,,CB0775,right,ACH,GNG.1092
+215,720575940644659236,intermediate (food path right),descending,,DNge028,left,ACH,GNG.903
+216,720575940632877869,intermediate (food path right),descending,,DNg67,right,ACH,GNG.1054
+217,720575940626826288,intermediate (food path right),central,,CB0219,right,GLUT,GNG.57
+218,720575940629382700,intermediate (food path left),central,,SAD074,left,GABA,GNG.IB.2
+219,720575940618131928,intermediate (food path left),central,,IB061,left,ACH,IB.VES.1
+220,720575940621399174,intermediate (food path right),descending,,DNge127,left,GABA,IPS.GNG.31
+221,720575940636004975,intermediate (food path right),ascending,AN,AN_GNG_81,right,ACH,GNG.1219
+222,720575940639274147,intermediate (food path left),central,,CB0407,left,ACH,GNG.774
+223,720575940612319155,intermediate (food path left),central,ALIN,ALIN8,right,ACH,GNG.1196
+224,720575940640100440,intermediate (food path left),central,,SAD085,left,ACH,VES.24
+225,720575940634301852,intermediate (food path right),central,,CB0781,right,GABA,GNG.245
+226,720575940640486488,intermediate (food path left),descending,,DNge127,right,GABA,IPS.GNG.29
+227,720575940647447161,intermediate (food path left),ascending,AN,AN_GNG_81,left,ACH,GNG.3024
+228,720575940614730914,intermediate (food path left),descending,,DNg75,left,ACH,GNG.8
+229,720575940631314908,intermediate (food path right),central,,CB3703,right,GLUT,GNG.486
+230,720575940626433881,intermediate (food path right),central,,SAD085,right,ACH,VES.19
+231,720575940609423299,intermediate (food path left),central,,CB0819,left,GLUT,GNG.222
+232,720575940622838154,output: escape (giant fiber),descending,,DNp01,left,,PVLP.44
+233,720575940632499757,output: escape (giant fiber),descending,,DNp01,right,,PVLP.31
+234,720575940619654053,output: escape-related,descending,,DNp02,left,ACH,AMMC.GNG.1
+235,720575940604954289,output: escape-related,descending,,DNp04,left,ACH,PVLP.33
+236,720575940622673860,output: escape-related,descending,,DNp06,left,ACH,AVLP.38
+237,720575940620054694,output: escape-related,descending,,DNp11,left,ACH,LO.GNG.1
+238,720575940620468718,output: escape-related,descending,,DNp02,right,ACH,PVLP.GNG.4
+239,720575940629757036,output: escape-related,descending,,DNp04,right,ACH,PVLP.AVLP.31
+240,720575940611644529,output: escape-related,descending,,DNp06,right,ACH,AVLP.GNG.2
+241,720575940629777018,output: escape-related,descending,,DNp11,right,ACH,LO.GNG.2
+242,720575940616026939,output: backward walking,descending,,MDN,left,ACH,LAL.GNG.7
+243,720575940631082808,output: backward walking,descending,,MDN,left,ACH,LAL.GNG.6
+244,720575940610236514,output: backward walking,descending,,MDN,right,ACH,LAL.GNG.9
+245,720575940640331472,output: backward walking,descending,,MDN,right,ACH,LAL.GNG.12
+246,720575940635872101,output: forward walking / approach,descending,,DNp09,left,ACH,PVLP.GNG.3
+247,720575940627652358,output: forward walking / approach,descending,,DNp09,right,ACH,AVLP.GNG.6
+248,720575940627787609,output: steering,descending,,DNa01,left,ACH,GNG.171
+249,720575940629327659,output: steering,descending,,DNa02,left,ACH,LAL.IPS.3
+250,720575940644438551,output: steering,descending,,DNa01,right,ACH,GNG.119
+251,720575940604737708,output: steering,descending,,DNa02,right,ACH,LAL.IPS.2
+252,720575940621586854,output: feeding (proboscis motor),motor,brain_motor_neuron,CB0762,left,ACH,GNG.586
+253,720575940623352063,output: feeding (proboscis motor),motor,brain_motor_neuron,CB0911,left,,GNG.602
+254,720575940626094350,output: feeding (proboscis motor),motor,brain_motor_neuron,CB0762,right,GABA,GNG.820
+255,720575940612888178,output: feeding (proboscis motor),motor,brain_motor_neuron,CB0911,right,,GNG.900

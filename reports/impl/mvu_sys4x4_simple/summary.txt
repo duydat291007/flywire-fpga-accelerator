@@ -1,0 +1,11 @@
+config=sys4x4_simple
+target=mvu
+vivado=2025.2
+part=xc7a35tcpg236-1
+wns_ns=1.719
+whs_ns=0.092
+lut=833
+ff=882
+dsp=16
+bram=1
+lutram=92

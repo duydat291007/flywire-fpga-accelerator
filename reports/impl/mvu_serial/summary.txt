@@ -1,0 +1,11 @@
+config=serial
+target=mvu
+vivado=2025.2
+part=xc7a35tcpg236-1
+wns_ns=0.229
+whs_ns=0.088
+lut=344
+ff=550
+dsp=5
+bram=1
+lutram=44

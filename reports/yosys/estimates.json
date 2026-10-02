@@ -1,0 +1,115 @@
+{
+  "tool": "Yosys 0.33 (git sha1 2584903a060)",
+  "rows": [
+    {
+      "config": "mvu serial",
+      "LUT": 413,
+      "FF": 595,
+      "DSP48E1": 1,
+      "RAMB18": 0,
+      "RAMB36": 1,
+      "LUTRAM_cells": 11,
+      "SRL": 0,
+      "CARRY4": 8
+    },
+    {
+      "config": "mvu 2x2 simple wbuf1",
+      "LUT": 637,
+      "FF": 740,
+      "DSP48E1": 5,
+      "RAMB18": 0,
+      "RAMB36": 1,
+      "LUTRAM_cells": 12,
+      "SRL": 7,
+      "CARRY4": 47
+    },
+    {
+      "config": "mvu 2x2 banked wbuf2",
+      "LUT": 672,
+      "FF": 775,
+      "DSP48E1": 5,
+      "RAMB18": 2,
+      "RAMB36": 0,
+      "LUTRAM_cells": 12,
+      "SRL": 7,
+      "CARRY4": 47
+    },
+    {
+      "config": "mvu 4x4 simple wbuf1",
+      "LUT": 784,
+      "FF": 1002,
+      "DSP48E1": 17,
+      "RAMB18": 0,
+      "RAMB36": 1,
+      "LUTRAM_cells": 24,
+      "SRL": 6,
+      "CARRY4": 62
+    },
+    {
+      "config": "mvu 4x4 banked wbuf1",
+      "LUT": 803,
+      "FF": 999,
+      "DSP48E1": 17,
+      "RAMB18": 4,
+      "RAMB36": 0,
+      "LUTRAM_cells": 24,
+      "SRL": 6,
+      "CARRY4": 63
+    },
+    {
+      "config": "mvu 4x4 banked wbuf2",
+      "LUT": 935,
+      "FF": 1137,
+      "DSP48E1": 17,
+      "RAMB18": 4,
+      "RAMB36": 0,
+      "LUTRAM_cells": 24,
+      "SRL": 6,
+      "CARRY4": 63
+    },
+    {
+      "config": "mvu 4x4 banked wbuf3",
+      "LUT": 812,
+      "FF": 893,
+      "DSP48E1": 17,
+      "RAMB18": 4,
+      "RAMB36": 0,
+      "LUTRAM_cells": 56,
+      "SRL": 6,
+      "CARRY4": 63
+    },
+    {
+      "config": "mvu 8x8 banked wbuf2",
+      "LUT": 1781,
+      "FF": 2417,
+      "DSP48E1": 64,
+      "RAMB18": 8,
+      "RAMB36": 0,
+      "LUTRAM_cells": 48,
+      "SRL": 37,
+      "CARRY4": 101
+    },
+    {
+      "config": "basys3_top serial",
+      "LUT": 3099,
+      "FF": 3858,
+      "DSP48E1": 2,
+      "RAMB18": 0,
+      "RAMB36": 2,
+      "LUTRAM_cells": 11,
+      "SRL": 0,
+      "CARRY4": 270
+    },
+    {
+      "config": "basys3_top 4x4 banked wbuf2",
+      "LUT": 3564,
+      "FF": 4295,
+      "DSP48E1": 17,
+      "RAMB18": 4,
+      "RAMB36": 1,
+      "LUTRAM_cells": 24,
+      "SRL": 6,
+      "CARRY4": 314
+    }
+  ]
+}

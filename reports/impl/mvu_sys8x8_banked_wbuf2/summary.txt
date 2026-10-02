@@ -1,0 +1,11 @@
+config=sys8x8_banked_wbuf2
+target=mvu
+vivado=2025.2
+part=xc7a35tcpg236-1
+wns_ns=1.037
+whs_ns=0.078
+lut=1628
+ff=1427
+dsp=64
+bram=4
+lutram=580

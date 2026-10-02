@@ -1,0 +1,11 @@
+config=sys4x4_banked_wbuf2
+target=top
+vivado=2025.2
+part=xc7a35tcpg236-1
+wns_ns=0.157
+whs_ns=0.040
+lut=3430
+ff=3681
+dsp=16
+bram=32
+lutram=453

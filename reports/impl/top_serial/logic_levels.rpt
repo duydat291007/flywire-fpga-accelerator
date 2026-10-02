@@ -1,0 +1,29 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Sep 30 22:33:34 2026
+| Host         : bland3 running 64-bit Ubuntu 26.04.1 LTS
+| Command      : report_design_analysis -logic_level_distribution -file {/mnt/c/Users/duyda/Documents/ChatGPT/FPGA fly project/build/vivado/top_serial/logic_levels.rpt}
+| Design       : basys3_top
+| Device       : xc7a35t
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Design Analysis
+
+Table of Contents
+-----------------
+1. Logic Level Distribution
+
+1. Logic Level Distribution
+---------------------------
+
++-----------------+-------------+-----+---+
+| End Point Clock | Requirement |  0  | 5 |
++-----------------+-------------+-----+---+
+| sys_clk_pin     | 10.000ns    | 998 | 2 |
++-----------------+-------------+-----+---+
+* Columns represent the logic levels per end point clock
+** Distribution is for top worst 1000 paths
+
+

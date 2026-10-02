@@ -1,0 +1,25 @@
+# Generated build output and local environments (never committed)
+build/
+.venv/
+__pycache__/
+*.pyc
+*.jou
+*.log
+*.str
+.Xil/
+xsim.dir/
+*.wdb
+*.pb
+obj_dir/
+captures/
+
+# FlyWire downloads (large, re-download per docs/flywire.md)
+data/
+
+# Local leftovers, not part of the project
+/FPGA
+/FPGA fly project/
+/fly_project_transfer.zip
+/clockInfo.txt
+vivado*.jou
+vivado*.log

@@ -1,0 +1,11 @@
+config=sys2x2_banked
+target=mvu
+vivado=2025.2
+part=xc7a35tcpg236-1
+wns_ns=2.719
+whs_ns=0.016
+lut=705
+ff=715
+dsp=4
+bram=1
+lutram=72
