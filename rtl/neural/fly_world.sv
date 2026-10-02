@@ -125,17 +125,39 @@ module fly_world
         return (c > 0) ? 2'sd1 : (c < 0) ? -2'sd1 : 2'sd0;
     endfunction
 
-    wire signed [1:0] fside = side_of(heading, fdx, fdy);
-    wire signed [1:0] tside = side_of(heading, tdx, tdy);
+    // food_on is also used by the action logic (combinational, current state)
     wire food_on   = food_present   && (fdist <= 6'(TASTE_RADIUS));
-    wire threat_on = threat_present && (tdist <= 6'(LOOM_RADIUS));
-    wire [9:0] loom_raw = 10'(LOOM_BASE) + 10'(LOOM_GAIN) * 10'(6'(LOOM_RADIUS) - tdist);
+
+    // Sensor drives, computed over two register stages so the distance and
+    // side arithmetic never sits in one long path (BUG-010):
+    //   stage 1 (every cycle): position differences and heading
+    //   stage 2 (every cycle): |d|, side, range check, looming drive, and the
+    //                          presence flags -> u_sens
+    // Positions and heading therefore reach u_sens after 2 cycles, presence
+    // after 1. The world is idle for many cycles before fly_core samples
+    // u_sens (in S_CMD, one cycle after it latches the presence flags).
+    logic signed [6:0] s_fdx, s_fdy, s_tdx, s_tdy;
+    logic        [2:0] s_head;
+    always_ff @(posedge clk) begin
+        s_fdx  <= fdx;  s_fdy <= fdy;
+        s_tdx  <= tdx;  s_tdy <= tdy;
+        s_head <= heading;
+    end
+    wire [5:0] s_fdist = (absd(s_fdx) > absd(s_fdy)) ? absd(s_fdx) : absd(s_fdy);
+    wire [5:0] s_tdist = (absd(s_tdx) > absd(s_tdy)) ? absd(s_tdx) : absd(s_tdy);
+    wire signed [1:0] fside = side_of(s_head, s_fdx, s_fdy);
+    wire signed [1:0] tside = side_of(s_head, s_tdx, s_tdy);
+    wire s_food_on   = food_present   && (s_fdist <= 6'(TASTE_RADIUS));
+    wire s_threat_on = threat_present && (s_tdist <= 6'(LOOM_RADIUS));
+    wire [9:0] loom_raw = 10'(LOOM_BASE) + 10'(LOOM_GAIN) * 10'(6'(LOOM_RADIUS) - s_tdist);
     wire [7:0] loom = (loom_raw > 10'd255) ? 8'd255 : loom_raw[7:0];
 
-    assign u_sens[0] = (food_on && fside <= 0)   ? 8'(FOOD_DRIVE) : 8'd0;
-    assign u_sens[1] = (food_on && fside >= 0)   ? 8'(FOOD_DRIVE) : 8'd0;
-    assign u_sens[2] = (threat_on && tside <= 0) ? loom : 8'd0;
-    assign u_sens[3] = (threat_on && tside >= 0) ? loom : 8'd0;
+    always_ff @(posedge clk) begin
+        u_sens[0] <= (s_food_on && fside <= 0)   ? 8'(FOOD_DRIVE) : 8'd0;
+        u_sens[1] <= (s_food_on && fside >= 0)   ? 8'(FOOD_DRIVE) : 8'd0;
+        u_sens[2] <= (s_threat_on && tside <= 0) ? loom : 8'd0;
+        u_sens[3] <= (s_threat_on && tside >= 0) ? loom : 8'd0;
+    end
 
     // ------------------------------------------------------------------
     // Output-neuron counts for this step (index ranges from network.py)

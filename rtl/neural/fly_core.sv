@@ -155,7 +155,7 @@ module fly_core
     // External input for neuron res_idx: neurons 0..31 are the four sensor
     // groups of 8 (food L, food R, threat L, threat R). The drives depend only
     // on the world state, which cannot change during a timestep, so they are
-    // registered once per step (S_XLOAD) to keep them off the LIF path.
+    // registered once per step (S_CMD) to keep them off the LIF path.
     logic [3:0][7:0] u_sens, u_sens_q;
     logic [7:0][15:0] probe_next;    // probe group's next-bank potentials (see below)
     logic            world_done;     // fly_world finished this step's update
@@ -218,11 +218,13 @@ module fly_core
                     written  <= '0;
                     st       <= S_XLOAD;
                 end
-                S_XLOAD: begin
+                S_XLOAD: if (xb_ready) st <= S_CMD;
+                S_CMD: begin
+                    // fly_world registers u_sens; food_q/threat_q were latched
+                    // two edges ago, so the drives here are for this step
                     u_sens_q <= u_sens;
-                    if (xb_ready) st <= S_CMD;
+                    if (cmd_ready) st <= S_RES;
                 end
-                S_CMD:   if (cmd_ready) st <= S_RES;
                 S_RES:   if (res_fire && res_last) st <= S_FLUSH;
                 S_FLUSH: if (lw_valid && lw_last)  st <= S_COMMIT;   // last write lands now
                 S_COMMIT: begin

@@ -1,14 +1,14 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Sep 30 22:33:30 2026
+| Date         : Fri Oct  2 11:14:07 2026
 | Host         : bland3 running 64-bit Ubuntu 26.04.1 LTS
-| Command      : check_timing -verbose -file {/mnt/c/Users/duyda/Documents/ChatGPT/FPGA fly project/build/vivado/top_serial/check_timing.rpt}
+| Command      : check_timing -verbose -file /mnt/c/Users/duyda/Desktop/personal_projects/fly_fpga/build/vivado/top_serial/check_timing.rpt
 | Design       : basys3_top
 | Device       : 7a35t-cpg236
 | Speed File   : -1  PRODUCTION 1.23 2018-06-13
 | Design State : Routed
-----------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 
 check_timing report
@@ -19,8 +19,8 @@ Table of Contents
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
 4. checking unconstrained_internal_endpoints (0)
-5. checking no_input_delay (11)
-6. checking no_output_delay (11)
+5. checking no_input_delay (13)
+6. checking no_output_delay (13)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -50,11 +50,11 @@ Table of Contents
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
-5. checking no_input_delay (11)
+5. checking no_input_delay (13)
 -------------------------------
  There are 0 input ports with no input delay specified.
 
- There are 11 input ports with no input delay but user has a false path constraint. (MEDIUM)
+ There are 13 input ports with no input delay but user has a false path constraint. (MEDIUM)
 
 btnC
 btnL
@@ -67,16 +67,20 @@ sw[3]
 sw[5]
 sw[6]
 sw[7]
+sw[8]
+sw[9]
 
 
-6. checking no_output_delay (11)
+6. checking no_output_delay (13)
 --------------------------------
  There are 0 ports with no output delay specified.
 
- There are 11 ports with no output delay but user has a false path constraint (MEDIUM)
+ There are 13 ports with no output delay but user has a false path constraint (MEDIUM)
 
 RsTx
 led[0]
+led[10]
+led[11]
 led[12]
 led[13]
 led[14]

@@ -21,16 +21,16 @@ The FPGA streams its state over USB to a live dashboard.
 | Board | Basys 3, 100 MHz, single clock domain. Switches/buttons for food, threat, pause and step; UART telemetry (119-byte CRC-checked packets, 50/s) |
 | Verification | Python reference model. Self-checking testbenches with bit-exact 700-step closed-loop traces, random-stimulus world test, SystemVerilog assertions, UVM environment with functional coverage, and 27 injected-bug mutation checks (all detected). |
 
-### Results (Vivado 2025.2, xc7a35tcpg236-1, post-route)
+### Results (Vivado 2025.2, xc7a35tcpg236-1, post-route, full board design)
 
-| Design | LUT | FF | DSP | BRAM tiles | Setup / hold slack | Cycles per neural update | Time |
+| Engine | LUT | FF | DSP | BRAM tiles | Setup / hold slack @ 100 MHz | Cycles per neural update | Time |
 |---|---|---|---|---|---|---|---|
-| Full design, 4×4 systolic (banked, 2 weight buffers) | 3,430 | 3,681 | 16 | 32 | +0.157 / +0.040 ns | **28,937** | 289 µs |
-| Serial baseline (simulation cycles) | | | 5 | | | 65,799 | 658 µs |
+| **4×4 systolic** (banked, 2 weight buffers) | 3,424 | 3,717 | 16 | 32 | +0.665 / +0.033 ns | **28,937** | **289 µs** |
+| Serial MAC baseline | 3,006 | 3,474 | 6 | 32 | +0.547 / +0.039 ns | 65,800 | 658 µs |
 
-- **Speedup:** the 4×4 systolic engine is about **2.3× faster** than the serial baseline per 256-neuron update, at the same 100 MHz clock.
-- **Accelerator benchmarks:** standalone runs for every array configuration are in [`reports/impl/results.md`](reports/impl/results.md), with cycle counts in [`reports/perf/mvu_cycles.md`](reports/perf/mvu_cycles.md).
-- **Not yet rebuilt:** the full-design serial implementation in `results.md` is still from the earlier 64-neuron version.
+- **Speedup:** the systolic engine is **2.3× faster** per 256-neuron update than the serial baseline at the same 100 MHz clock. It costs about 420 more LUTs and 10 more DSP slices.
+- **Accelerator benchmarks:** standalone runs for every array configuration (2×2 to 8×8, banked or not, 1–3 weight buffers) are in [`reports/impl/results.md`](reports/impl/results.md), with cycle counts in [`reports/perf/mvu_cycles.md`](reports/perf/mvu_cycles.md).
+- **Timing closure work:** this took several rounds (pipelining the LIF update, a two-phase world update, two-stage sensor arithmetic, and a registered serial MAC operand/write-back). Every step was re-verified against the reference model.
 
 ### Behavior (reference model, 40 trials each, [`model/flywire/out/behavior_report.md`](model/flywire/out/behavior_report.md))
 
@@ -95,7 +95,6 @@ The subcircuit keeps only about 10% of each neuron's real inputs. This is an eng
 
 - The fly can get trapped in an arena corner while the threat sits next to it: every jump direction is blocked by walls. This is a world-rule limitation.
 - The design is volatile: it must be reprogrammed after power-off (booting from the on-board flash isn't set up yet).
-- Setup slack is thin (+0.157 ns). The critical path is the threat-distance sensor calculation.
 
 ## Data and credits
 

@@ -101,10 +101,13 @@ module mvu_serial #(
     // ------------------------------------------------------------------
     // Issue and MAC pipeline
     //   stage 0 (RUN): address (rd_i, rd_j) issued
-    //   stage 1      : w_rd valid; multiply by xreg[j1]; accumulate
+    //   stage 1      : w_rd and x1 (= xreg[j]) valid; multiply; accumulate
+    //   (x1 is read from the 256-entry vector in stage 0, alongside the
+    //    weight-memory read, so that mux is not in front of the DSP; BUG-010)
     // ------------------------------------------------------------------
     logic          v1, first1, last1;
-    logic [AW-1:0] i1, j1;
+    logic [AW-1:0] i1;
+    logic [7:0]    x1;
     logic signed [31:0] acc;
 
     wire [AW:0] dim_m1 = dim_q - 1'b1;
@@ -112,7 +115,7 @@ module mvu_serial #(
     wire issue_last_j = (rd_j == dim_m1[AW-1:0]);
     wire issue_last_i = (rd_i == dim_m1[AW-1:0]);
 
-    wire signed [15:0] prod     = $signed(w_rd) * $signed(xreg[j1]);
+    wire signed [15:0] prod     = $signed(w_rd) * $signed(x1);
     wire signed [31:0] prod_ext = 32'(prod);                 // sign-extending cast
     wire signed [31:0] acc_next = (first1 ? 32'sd0 : acc) + prod_ext;
 
@@ -120,16 +123,24 @@ module mvu_serial #(
 
     // Datapath registers: no reset needed (qualified by v1), which keeps the
     // result buffer inferable as distributed RAM.
+    // The finished sum is written to the result buffer one cycle later from a
+    // register (wb_*), so the multiply-add and the 256-deep distributed-RAM
+    // write are in different clock cycles (BUG-010: N=256 missed 100 MHz).
+    logic          wb_v;
+    logic [AW-1:0] wb_i;
+    logic [31:0]   wb_d;
     always_ff @(posedge clk) begin
         i1     <= rd_i;
-        j1     <= rd_j;
+        x1     <= xreg[rd_j];
         first1 <= (rd_j == '0);
         last1  <= issue_last_j;
-        if (v1) begin
+        wb_v   <= v1 && last1;
+        wb_i   <= i1;
+        wb_d   <= acc_next;
+        if (v1)
             acc <= acc_next;
-            if (last1)
-                rbuf[i1] <= acc_next;
-        end
+        if (wb_v)
+            rbuf[wb_i] <= wb_d;
     end
 
     always_ff @(posedge clk) begin
@@ -169,8 +180,8 @@ module mvu_serial #(
                         rd_j <= rd_j + 1'b1;
                     end
                 end
-                S_FLUSH: begin          // last product is being accumulated this cycle
-                    if (!v1) begin
+                S_FLUSH: begin          // last product accumulating / last sum being written
+                    if (!v1 && !wb_v) begin
                         out_idx <= '0;
                         state   <= S_DRAIN;
                     end

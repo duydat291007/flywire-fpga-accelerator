@@ -1,14 +1,14 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Oct  1 01:56:57 2026
+| Date         : Fri Oct  2 11:18:00 2026
 | Host         : bland3 running 64-bit Ubuntu 26.04.1 LTS
-| Command      : check_timing -verbose -file {/mnt/c/Users/duyda/Documents/ChatGPT/FPGA fly project/build/vivado/top_sys4x4_banked_wbuf2/check_timing.rpt}
+| Command      : check_timing -verbose -file /mnt/c/Users/duyda/Desktop/personal_projects/fly_fpga/build/vivado/top_sys4x4_banked_wbuf2/check_timing.rpt
 | Design       : basys3_top
 | Device       : 7a35t-cpg236
 | Speed File   : -1  PRODUCTION 1.23 2018-06-13
 | Design State : Routed
------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 check_timing report

@@ -62,7 +62,7 @@ module tb_fly_world #(
                 tick();
                 rf_evt = 0; rt_evt = 0;
             end
-            #1;
+            tick();                        // sensor outputs are registered (1 cycle)
             for (int k = 0; k < 4; k++)
                 if (u_sens[k] !== 8'(u[k])) begin
                     $display("FAIL step %0d: sensor %0d rtl=%0d model=%0d (fly %0d,%0d h=%0d)",
