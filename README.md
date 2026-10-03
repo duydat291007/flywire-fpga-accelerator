@@ -13,6 +13,7 @@ The FPGA streams its state over USB to a live dashboard.
 
 
 https://github.com/user-attachments/assets/2f89b42b-463c-46aa-842f-1bfe4187ed75
+
 *Demo: the fly eating and escaping a threat, running live on the Basys 3.*
 
 
