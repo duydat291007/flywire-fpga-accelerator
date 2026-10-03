@@ -11,6 +11,11 @@ The FPGA streams its state over USB to a live dashboard.
 
 *Live capture from the board: the 256 FlyWire neurons (left), with the fly escaping a threat (right). It reported 28,937 cycles per neural update and 0 CRC errors.*
 
+
+https://github.com/user-attachments/assets/2f89b42b-463c-46aa-842f-1bfe4187ed75
+*Demo: the fly eating and escaping a threat, running live on the Basys 3.*
+
+
 ## Highlights
 
 | | |
