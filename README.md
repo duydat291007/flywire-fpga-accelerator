@@ -19,7 +19,7 @@ The FPGA streams its state over USB to a live dashboard.
 | Network | 256 neurons and 2,265 signed synapses taken from FlyWire. Weight = sign(transmitter) × min(127, 2 × synapse count). No per-synapse tuning. |
 | Neuron model | Integer leaky integrate-and-fire with double-buffered state (no same-step spike contamination) |
 | Board | Basys 3, 100 MHz, single clock domain. Switches/buttons for food, threat, pause and step; UART telemetry (119-byte CRC-checked packets, 50/s) |
-| Verification | Python reference model. Self-checking testbenches with bit-exact 700-step closed-loop traces, random-stimulus world test, SystemVerilog assertions, UVM environment with functional coverage, and 27 injected-bug mutation checks (all detected). |
+| Verification | Python reference model. Self-checking testbenches with bit-exact 700-step closed-loop traces, random-stimulus world test, SystemVerilog assertions, UVM environment with functional coverage, and 28 injected-bug mutation checks (all detected). |
 
 ### Results (Vivado 2025.2, xc7a35tcpg236-1, post-route, full board design)
 

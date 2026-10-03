@@ -1,76 +1,77 @@
 # Regression summary
 
-- Date: 2026-10-02T11:42:24
+- Date: 2026-10-02T16:46:50
 - Host: `vm` (Linux-6.18.44-fc-v51-x86_64-with-glibc2.39)
 - Python 3.11.15; Icarus Verilog version 12.0 (stable) (); Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
 - Source revision: uncommitted working tree (no git HEAD)
 - Vector seeds: MVU 20260930, LIF 11, trace scenario fixed; tb_mvu seed 1
-- **62 / 62 passed**
+- **63 / 63 passed**
 
 | Test | Simulator | Result | Time (s) | Detail |
 |---|---|---|---|---|
-| python_unittest | python | PASS | 11.2 | 27 tests |
-| gen_export_rtl | python | PASS | 0.0 | exported 2265 nonzero synapses, threshold 100, to /home/claude/fly-accel/rtl/common |
+| python_unittest | python | PASS | 10.1 | 28 tests |
+| gen_export_rtl | python | PASS | 0.2 | exported 2265 nonzero synapses, threshold 100, to /home/claude/fly-accel/rtl/common |
 | gen_gen_mvu_vectors | python | PASS | 0.3 | wrote 86 cases (seed 20260930) to /home/claude/fly-accel/tests/vectors/mvu_cases.txt |
-| gen_gen_fly_trace | python | PASS | 23.2 | wrote 700 steps to /home/claude/fly-accel/tests/vectors/fly_trace.txt: eaten=5 caught=2 jumps=15 actions(walk,back,jump,eat,blocked)=[64, 0, 15, 5, 3] spikes=1877 |
-| gen_gen_fly_trace_short | python | PASS | 1.3 | wrote 44 steps to /home/claude/fly-accel/tests/vectors/fly_trace_short.txt: eaten=1 caught=0 jumps=2 actions(walk,back,jump,eat,blocked)=[2, 0, 2, 1, 0] spikes=318 |
-| gen_gen_world_vectors | python | PASS | 0.2 | wrote 6000 world steps to /home/claude/fly-accel/tests/vectors/world_vectors.txt: eaten=21 caught=8 jumps=91 actions(walk,back,jump,eat,blocked)=[188, 408, 91, 21, 42] |
+| gen_gen_fly_trace | python | PASS | 20.5 | wrote 700 steps to /home/claude/fly-accel/tests/vectors/fly_trace.txt: eaten=5 caught=2 jumps=15 actions(walk,back,jump,eat,blocked)=[64, 0, 15, 5, 3] spikes=1877 |
+| gen_gen_fly_trace_short | python | PASS | 1.2 | wrote 44 steps to /home/claude/fly-accel/tests/vectors/fly_trace_short.txt: eaten=1 caught=0 jumps=2 actions(walk,back,jump,eat,blocked)=[2, 0, 2, 1, 0] spikes=318 |
+| gen_gen_world_vectors | python | PASS | 0.1 | wrote 6000 world steps to /home/claude/fly-accel/tests/vectors/world_vectors.txt: eaten=21 caught=8 jumps=91 actions(walk,back,jump,eat,blocked)=[190, 409, 91, 21, 39] |
 | gen_gen_lif_vectors | python | PASS | 0.2 | wrote 9561 LIF cases to /home/claude/fly-accel/tests/vectors/lif_cases.txt |
-| uart_tx_div16 | icarus | PASS | 0.1 | PASS tb_uart_tx: 200 bytes, DIV=16, cycle-exact framing |
-| uart_tx_div868 | icarus | PASS | 0.1 | PASS tb_uart_tx: 6 bytes, DIV=868, cycle-exact framing |
+| uart_tx_div16 | icarus | PASS | 0.2 | PASS tb_uart_tx: 200 bytes, DIV=16, cycle-exact framing |
+| uart_tx_div868 | icarus | PASS | 0.2 | PASS tb_uart_tx: 6 bytes, DIV=868, cycle-exact framing |
 | lif_vectors | icarus | PASS | 0.3 | PASS tb_lif: 9561 vectors on lif_update and lif_pipe (58 exact-threshold firings) |
-| world_random | icarus | PASS | 0.7 | PASS tb_fly_world: 6000 steps with random output spikes match the model (eaten=21 caught=8 jumps=91, 5 catches at a window end) |
-| mvu_serial | icarus | PASS | 14.9 | PASS tb_mvu [serial]: 86 cases, 800 stall cycles observed |
-| mvu_4x4_banked_wbuf2 | icarus | PASS | 29.4 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=2]: 86 cases, 792 stall cycles observed |
-| mvu_4x4_banked_wbuf1 | icarus | PASS | 34.5 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=1]: 86 cases, 1025 stall cycles observed |
-| mvu_4x4_simple_wbuf1 | icarus | PASS | 42.5 | PASS tb_mvu [systolic 4x4 banked=0 wbuf=1]: 86 cases, 925 stall cycles observed |
-| mvu_4x4_banked_wbuf3 | icarus | PASS | 30.0 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=3]: 86 cases, 795 stall cycles observed |
-| mvu_2x2_banked_wbuf2 | icarus | PASS | 21.9 | PASS tb_mvu [systolic 2x2 banked=1 wbuf=2]: 86 cases, 946 stall cycles observed |
-| mvu_2x2_simple_wbuf1 | icarus | PASS | 29.1 | PASS tb_mvu [systolic 2x2 banked=0 wbuf=1]: 86 cases, 919 stall cycles observed |
-| mvu_2x8_banked_wbuf2 | icarus | PASS | 28.4 | PASS tb_mvu [systolic 2x8 banked=1 wbuf=2]: 86 cases, 885 stall cycles observed |
-| mvu_8x8_banked_wbuf2 | icarus | PASS | 77.3 | PASS tb_mvu [systolic 8x8 banked=1 wbuf=2]: 86 cases, 904 stall cycles observed |
-| mvu_1x1_simple_wbuf1 | icarus | PASS | 33.0 | PASS tb_mvu [systolic 1x1 banked=0 wbuf=1]: 86 cases, 909 stall cycles observed |
-| fly_core_serial | icarus | PASS | 215.0 | PASS tb_fly_core [serial]: 44 steps match the reference model (318 spikes, eaten=1 caught=0) |
-| fly_core_4x4_banked_wbuf2 | icarus | PASS | 158.3 | PASS tb_fly_core [systolic 4x4 banked=1 wbuf=2]: 44 steps match the reference model (318 spikes, eaten=1 caught=0) |
-| sva_mvu_serial | verilator | PASS | 15.0 | PASS tb_mvu [serial]: 86 cases, 800 stall cycles observed |
-| sva_mvu_4x4_banked_wbuf2 | verilator | PASS | 12.4 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=2]: 86 cases, 792 stall cycles observed |
-| sva_mvu_2x8_banked_wbuf2 | verilator | PASS | 12.0 | PASS tb_mvu [systolic 2x8 banked=1 wbuf=2]: 86 cases, 885 stall cycles observed |
-| sva_mvu_4x4_simple_wbuf1 | verilator | PASS | 12.8 | PASS tb_mvu [systolic 4x4 banked=0 wbuf=1]: 86 cases, 925 stall cycles observed |
-| sva_fly_core_4x4_banked_wbuf2 | verilator | PASS | 28.8 | PASS tb_fly_core [systolic 4x4 banked=1 wbuf=2]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
-| sva_fly_core_serial | verilator | PASS | 39.9 | PASS tb_fly_core [serial]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
-| sva_fly_core_2x2_banked_wbuf2 | verilator | PASS | 49.1 | PASS tb_fly_core [systolic 2x2 banked=1 wbuf=2]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
+| world_random | icarus | PASS | 0.6 | PASS tb_fly_world: 6000 steps with random output spikes match the model (eaten=21 caught=8 jumps=91, 5 catches at a window end) |
+| mvu_serial | icarus | PASS | 13.7 | PASS tb_mvu [serial]: 86 cases, 800 stall cycles observed |
+| mvu_4x4_banked_wbuf2 | icarus | PASS | 29.1 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=2]: 86 cases, 792 stall cycles observed |
+| mvu_4x4_banked_wbuf1 | icarus | PASS | 31.9 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=1]: 86 cases, 1025 stall cycles observed |
+| mvu_4x4_simple_wbuf1 | icarus | PASS | 40.2 | PASS tb_mvu [systolic 4x4 banked=0 wbuf=1]: 86 cases, 925 stall cycles observed |
+| mvu_4x4_banked_wbuf3 | icarus | PASS | 27.1 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=3]: 86 cases, 795 stall cycles observed |
+| mvu_2x2_banked_wbuf2 | icarus | PASS | 20.1 | PASS tb_mvu [systolic 2x2 banked=1 wbuf=2]: 86 cases, 946 stall cycles observed |
+| mvu_2x2_simple_wbuf1 | icarus | PASS | 27.4 | PASS tb_mvu [systolic 2x2 banked=0 wbuf=1]: 86 cases, 919 stall cycles observed |
+| mvu_2x8_banked_wbuf2 | icarus | PASS | 27.6 | PASS tb_mvu [systolic 2x8 banked=1 wbuf=2]: 86 cases, 885 stall cycles observed |
+| mvu_8x8_banked_wbuf2 | icarus | PASS | 74.3 | PASS tb_mvu [systolic 8x8 banked=1 wbuf=2]: 86 cases, 904 stall cycles observed |
+| mvu_1x1_simple_wbuf1 | icarus | PASS | 33.3 | PASS tb_mvu [systolic 1x1 banked=0 wbuf=1]: 86 cases, 909 stall cycles observed |
+| fly_core_serial | icarus | PASS | 208.9 | PASS tb_fly_core [serial]: 44 steps match the reference model (318 spikes, eaten=1 caught=0) |
+| fly_core_4x4_banked_wbuf2 | icarus | PASS | 151.7 | PASS tb_fly_core [systolic 4x4 banked=1 wbuf=2]: 44 steps match the reference model (318 spikes, eaten=1 caught=0) |
+| sva_mvu_serial | verilator | PASS | 14.5 | PASS tb_mvu [serial]: 86 cases, 800 stall cycles observed |
+| sva_mvu_4x4_banked_wbuf2 | verilator | PASS | 11.8 | PASS tb_mvu [systolic 4x4 banked=1 wbuf=2]: 86 cases, 792 stall cycles observed |
+| sva_mvu_2x8_banked_wbuf2 | verilator | PASS | 12.3 | PASS tb_mvu [systolic 2x8 banked=1 wbuf=2]: 86 cases, 885 stall cycles observed |
+| sva_mvu_4x4_simple_wbuf1 | verilator | PASS | 13.4 | PASS tb_mvu [systolic 4x4 banked=0 wbuf=1]: 86 cases, 925 stall cycles observed |
+| sva_fly_core_4x4_banked_wbuf2 | verilator | PASS | 29.2 | PASS tb_fly_core [systolic 4x4 banked=1 wbuf=2]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
+| sva_fly_core_serial | verilator | PASS | 39.5 | PASS tb_fly_core [serial]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
+| sva_fly_core_2x2_banked_wbuf2 | verilator | PASS | 47.1 | PASS tb_fly_core [systolic 2x2 banked=1 wbuf=2]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
 | sva_fly_core_4x4_simple_wbuf1 | verilator | PASS | 87.4 | PASS tb_fly_core [systolic 4x4 banked=0 wbuf=1]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
-| sva_fly_core_8x8_banked_wbuf2 | verilator | PASS | 31.0 | PASS tb_fly_core [systolic 8x8 banked=1 wbuf=2]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
-| telemetry_e2e_nodrop | verilator | PASS | 48.8 | PASS check_telemetry: 527 packets, steps 0..700, 0 dropped snapshots, all fields match the model |
-| telemetry_e2e_drops | verilator | PASS | 50.5 | PASS check_telemetry: 716 packets, steps 0..700, 6308 dropped snapshots, all fields match the model |
+| sva_fly_core_8x8_banked_wbuf2 | verilator | PASS | 31.7 | PASS tb_fly_core [systolic 8x8 banked=1 wbuf=2]: 700 steps match the reference model (1877 spikes, eaten=5 caught=2) |
+| telemetry_e2e_nodrop | verilator | PASS | 49.5 | PASS check_telemetry: 527 packets, steps 0..700, 0 dropped snapshots, all fields match the model |
+| telemetry_e2e_drops | verilator | PASS | 49.5 | PASS check_telemetry: 716 packets, steps 0..700, 6308 dropped snapshots, all fields match the model |
 | basys3_top_smoke | verilator | PASS | 16.6 | PASS check_top_state: step 63, rtl (39, 35, 1, 8, 12, 0, 4139), model (39, 35, 1, 8, 12, 0, 4139) / PASS check_stream: 93 packets, crc_err=0 hdr_err=0 seq_gaps=0 resets=1 steps 0..63 |
-| mutant_pe_zero_extend | mvu_4x4 | PASS | 1.0 | product zero-extended instead of sign-extended -> FAIL case 1 dim 64: y[12] expected -2, got 65534 |
-| mutant_serial_unsigned | mvu_serial | PASS | 0.5 | serial multiply without signed casts -> FAIL case 1 dim 64: y[12] expected -2, got 254 |
-| mutant_weight_src_mask | mvu_4x4 | PASS | 1.1 | partial-tile source mask removed -> FAIL case 2 dim 5: y[0] expected -122, got -19754 |
-| mutant_stale_accumulator | mvu_4x4 | PASS | 0.5 | accumulator not restarted per output group -> FAIL case 0 dim 64: y[0] expected 0, got x |
+| mutant_pe_zero_extend | mvu_4x4 | PASS | 0.8 | product zero-extended instead of sign-extended -> FAIL case 1 dim 64: y[12] expected -2, got 65534 |
+| mutant_serial_unsigned | mvu_serial | PASS | 0.4 | serial multiply without signed casts -> FAIL case 1 dim 64: y[12] expected -2, got 254 |
+| mutant_weight_src_mask | mvu_4x4 | PASS | 1.0 | partial-tile source mask removed -> FAIL case 2 dim 5: y[0] expected -122, got -19754 |
+| mutant_stale_accumulator | mvu_4x4 | PASS | 0.4 | accumulator not restarted per output group -> FAIL case 0 dim 64: y[0] expected 0, got x |
 | mutant_buffer_hazard_wide | mvu_2x8 | PASS | 0.6 | weight-buffer hazard check removed (wide array, result checks) -> FAIL case 1 dim 64: y[2] expected 107, got 0 |
-| mutant_buffer_hazard_sva | sva_mvu_4x4 | PASS | 12.0 | weight-buffer hazard check removed (square array, assertions) -> [41745000] %Error: mvu_sva.sv:136: Assertion failed in TOP.tb_mvu.g_dut.dut.u_sys_sva.a_busy_count: buffer bookkeeping |
-| mutant_skew_valid | mvu_4x4 | PASS | 5.6 | input skew of valid bits wrong ->        Time: 1041646000  Scope: tb_mvu.run_cmd |
-| mutant_ignore_backpressure | mvu_4x4 | PASS | 10.6 | result stream ignores res_ready -> FAIL [1664665000] output changed while stalled |
-| mutant_write_while_busy | mvu_4x4 | PASS | 30.6 | weight writes accepted while busy -> FAIL [41655000] ready asserted while busy |
-| mutant_loader_not_reset | mvu_4x4 | PASS | 16.0 | loader state survives reset -> FAIL case 49 dim 64: y[0] expected -23493, got 3560 |
+| mutant_buffer_hazard_sva | sva_mvu_4x4 | PASS | 11.5 | weight-buffer hazard check removed (square array, assertions) -> [41745000] %Error: mvu_sva.sv:136: Assertion failed in TOP.tb_mvu.g_dut.dut.u_sys_sva.a_busy_count: buffer bookkeeping |
+| mutant_skew_valid | mvu_4x4 | PASS | 5.9 | input skew of valid bits wrong ->        Time: 1041646000  Scope: tb_mvu.run_cmd |
+| mutant_ignore_backpressure | mvu_4x4 | PASS | 10.5 | result stream ignores res_ready -> FAIL [1664665000] output changed while stalled |
+| mutant_write_while_busy | mvu_4x4 | PASS | 30.7 | weight writes accepted while busy -> FAIL [41655000] ready asserted while busy |
+| mutant_loader_not_reset | mvu_4x4 | PASS | 15.1 | loader state survives reset -> FAIL case 49 dim 64: y[0] expected -23493, got 3560 |
 | mutant_lif_strict_gt | lif | PASS | 0.0 | fires on > instead of >= -> FAIL th=100 v=0 i=100 u=0: got (100,0) expected (0,1) |
 | mutant_lif_no_clamp | lif | PASS | 0.0 | negative candidate not clamped to 0 -> FAIL th=100 v=0 i=-1 u=0: got (65535,0) expected (0,0) |
 | mutant_lif_pipe_tag_skew | lif | PASS | 0.0 | pipelined LIF result written to the wrong neuron -> FAIL lif_pipe vector 1: got (0,1) expected (99,0) |
-| mutant_same_step_contamination | fly_core | PASS | 6.8 | LIF reads the next bank instead of the current bank -> FAIL step 42 (systolic 4x4 banked=1 wbuf=2) |
-| mutant_commit_incomplete | sva_fly_core | PASS | 6.2 | commit before the last neuron -> [944775000] %Error: fly_sva.sv:23: Assertion failed in TOP.tb_fly_core.dut.u_core_sva.a_commit_complete: commit before all 256 neurons written |
-| mutant_sensor_input_shift | fly_core | PASS | 6.8 | sensor drive applied to the wrong neurons -> FAIL step 41: V[4] rtl=0 model=60 |
-| mutant_world_threat_side_flipped | fly_core | PASS | 9.8 | looming input sent to the wrong side -> FAIL step 142: V[16] rtl=0 model=60 |
-| mutant_world_steer_reversed | fly_core | PASS | 20.0 | steering neurons turn the fly the wrong way -> FAIL step 456 (systolic 4x4 banked=1 wbuf=2) |
+| mutant_same_step_contamination | fly_core | PASS | 7.1 | LIF reads the next bank instead of the current bank -> FAIL step 42 (systolic 4x4 banked=1 wbuf=2) |
+| mutant_commit_incomplete | sva_fly_core | PASS | 5.8 | commit before the last neuron -> [944775000] %Error: fly_sva.sv:23: Assertion failed in TOP.tb_fly_core.dut.u_core_sva.a_commit_complete: commit before all 256 neurons written |
+| mutant_sensor_input_shift | fly_core | PASS | 6.6 | sensor drive applied to the wrong neurons -> FAIL step 41: V[4] rtl=0 model=60 |
+| mutant_world_threat_side_flipped | fly_core | PASS | 9.6 | looming input sent to the wrong side -> FAIL step 142: V[16] rtl=0 model=60 |
+| mutant_world_steer_reversed | fly_core | PASS | 18.9 | steering neurons turn the fly the wrong way -> FAIL step 456 (systolic 4x4 banked=1 wbuf=2) |
 | mutant_world_threat_period | fly_core | PASS | 10.4 | threat pursues at the wrong rate -> FAIL step 160 (systolic 4x4 banked=1 wbuf=2) |
 | mutant_world_catch_before_pursuit | world | PASS | 0.2 | catch check skipped after a motor window -> FAIL step 2184 |
+| mutant_world_corner_escape | world | PASS | 0.5 | cornered fly jumps back toward the threat instead of along the wall -> FAIL step 4304 |
 | mutant_world_jump_toward_threat | world | PASS | 0.1 | escape jump heads toward the threat -> FAIL step 624 |
 | mutant_world_back_margin | world | PASS | 0.0 | backing-up threshold off by one -> FAIL step 216 |
 | mutant_world_food_ahead_axis | world | PASS | 0.0 | food button places food on the wrong axis -> FAIL step 66 |
-| mutant_world_jump_no_retry | fly_core | PASS | 14.3 | jump gives up at a wall instead of trying other headings -> FAIL step 304 (systolic 4x4 banked=1 wbuf=2) |
+| mutant_world_jump_no_retry | fly_core | PASS | 14.8 | jump gives up at a wall instead of trying other headings -> FAIL step 304 (systolic 4x4 banked=1 wbuf=2) |
 | mutant_uart_lsb_msb | uart | PASS | 0.0 | data sent MSB first ->        Time: 6646000  Scope: tb_uart_tx.expect_frame |
 | mutant_telemetry_no_clear | telemetry | PASS | 20.4 | activity counters not cleared at capture -> FAIL: seq 33 step 43: activity mismatch (prev step 42) |
-| mutant_crc_init | telemetry | PASS | 20.3 | CRC initial value wrong -> FAIL: parser stats crc=153 hdr=0 discarded=18207 gaps=0 |
+| mutant_crc_init | telemetry | PASS | 19.9 | CRC initial value wrong -> FAIL: parser stats crc=153 hdr=0 discarded=18207 gaps=0 |
 
 ## Cycle counts (simulation, no output stalls)
 
