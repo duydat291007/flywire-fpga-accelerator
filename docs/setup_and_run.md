@@ -1,8 +1,13 @@
 # FPGA fly project: setup and run steps
 
-## Status (2026-10-02)
+## Status (2026-10-02, evening)
 
-The 256-neuron FlyWire design runs on the board. Both the 4×4 systolic build (+0.665 ns setup slack, 289 µs per update) and the serial baseline (+0.547 ns, 658 µs) meet 100 MHz. Everything is pushed to https://github.com/duydat291007/flywire-fpga-accelerator.
+The project is complete and published at https://github.com/duydat291007/flywire-fpga-accelerator. The latest commit is "Update regression summary (63/63)".
+
+- **Board:** the FlyWire design is stored in the board's flash, and jumper JP1 is on **QSPI**. The board starts the design by itself whenever it powers on: LED 5 lights within about a second. No laptop programming is needed.
+- **Timing at 100 MHz:** both builds pass. The 4×4 systolic build has +0.904 ns setup slack (289 µs per update); the serial build has +0.984 ns (658 µs).
+- **Checks:** 63/63 cloud checks pass, and all 6 tests pass in Vivado's simulator.
+- **Behavior:** a cornered fly now escapes along a wall.
 
 To publish future changes:
 
@@ -13,10 +18,7 @@ git commit -m "message"
 git push
 ```
 
-Optional next steps:
-
-- Load the latest bitstream onto the board (section A).
-- Record a demo video.
+The remaining optional step is a short demo video linked from the README.
 
 ## Where things are
 
@@ -32,22 +34,27 @@ Optional next steps:
 
 Run each command on its own line and wait for it to finish before the next.
 
-## A. Run the demo (board already built)
+## A. Run the demo
 
-1. **Windows PowerShell:** attach the board to WSL and leave this window open.
+The board boots the FlyWire design from flash on its own (JP1 = QSPI). You only need the laptop to watch the dashboard.
+
+1. **Power the board** with the USB cable. LED 5 should turn on.
+2. **Open Ubuntu first** and leave it open. usbipd can only attach the board while WSL is running.
+3. **Windows PowerShell:** attach the board to WSL and leave this window open.
    ```powershell
    usbipd attach --wsl --busid 3-1 --auto-attach
    ```
    If the bus ID has changed, run `usbipd list` and use the one shown for 0403:6010.
-2. **Ubuntu:**
+4. **Ubuntu:** open the dashboard without reprogramming.
    ```bash
    cd ~/fly_fpga
-   bash scripts/demo.sh
+   bash scripts/demo.sh --no-program
    ```
-   This checks the USB connection, programs the FPGA, closes any old dashboard, and opens the live dashboard.
-   - If the board is already programmed, use `bash scripts/demo.sh --no-program`.
-   - LED 5 on means the weights have loaded. The dashboard banner should be green and read **LIVE FPGA**.
-3. **Board controls:**
+   The dashboard banner should be green and read **LIVE FPGA**.
+
+After rebuilding the design, `bash scripts/demo.sh` (without `--no-program`) loads the new bitstream over USB until the next power-off. Run `bash scripts/vivado/run_vivado.sh flash` (section C) to make it the design the board boots.
+
+5. **Board controls:**
 
    | Control | Function |
    |---|---|
@@ -120,9 +127,10 @@ To go back, put JP1 on JTAG or USB; programming from the laptop works in any pos
 
 | Symptom | Fix |
 |---|---|
+| usbipd: "There is no WSL 2 distribution running" | Open Ubuntu first, then run the attach command again |
 | Dashboard shows LINK LOST / `/dev/ttyUSB1` missing | Re-run `usbipd attach --wsl --busid 3-1 --auto-attach`. The dashboard reconnects by itself. |
 | "already in use - is another dashboard open?" | `pkill -f fly_dashboard`, then start one again |
-| LED 5 off | Board reset or power-cycled: program it again |
+| LED 5 off at power-on | Check JP1 is on QSPI (top pins). Otherwise program it with `bash scripts/demo.sh` |
 | Window invisible or "COPY MODE" | `wsl --shutdown` in PowerShell, reopen Ubuntu, attach the board again |
 | `[200~` appears in a command | Paste glitch: Ctrl+C, then paste or type the line again |
 | Fly pinned near a wall with the threat on | Less common since the ±135° escape rule. Press btnR or turn sw2 off. |
