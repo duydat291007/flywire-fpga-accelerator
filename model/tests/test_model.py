@@ -210,6 +210,15 @@ class TestWorld(unittest.TestCase):
         w.act()
         self.assertNotEqual(w.fly, [0, 20])
 
+    def test_cornered_fly_escapes_along_wall(self):
+        w = World()
+        w.threat_present = True
+        w.fly, w.threat = [0, 0], [3, 3]            # trapped in a corner, threat diagonal
+        w.motor_acc[ESC] = 1
+        self.assertEqual(w.act(), 2)
+        self.assertNotEqual(w.fly, [0, 0])          # +-135 degree tries slide along a wall
+        self.assertTrue(w.fly[0] == 0 or w.fly[1] == 0)
+
     def test_eating_needs_proboscis_spikes(self):
         w = World()
         w.food_present = True

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Fri Oct  2 11:17:57 2026
+| Date         : Fri Oct  2 14:21:38 2026
 | Host         : bland3 running 64-bit Ubuntu 26.04.1 LTS
 | Command      : report_utilization -file /mnt/c/Users/duyda/Desktop/personal_projects/fly_fpga/build/vivado/top_sys4x4_banked_wbuf2/utilization.rpt
 | Design       : basys3_top
@@ -32,15 +32,15 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs                 | 3424 |     0 |          0 |     20800 | 16.46 |
-|   LUT as Logic             | 2971 |     0 |          0 |     20800 | 14.28 |
+| Slice LUTs                 | 3433 |     0 |          0 |     20800 | 16.50 |
+|   LUT as Logic             | 2980 |     0 |          0 |     20800 | 14.33 |
 |   LUT as Memory            |  453 |     0 |          0 |      9600 |  4.72 |
 |     LUT as Distributed RAM |  448 |     0 |            |           |       |
 |     LUT as Shift Register  |    5 |     0 |            |           |       |
 | Slice Registers            | 3717 |     0 |          0 |     41600 |  8.94 |
 |   Register as Flip Flop    | 3717 |     0 |          0 |     41600 |  8.94 |
 |   Register as Latch        |    0 |     0 |          0 |     41600 |  0.00 |
-| F7 Muxes                   |  157 |     0 |          0 |     16300 |  0.96 |
+| F7 Muxes                   |  158 |     0 |          0 |     16300 |  0.97 |
 | F8 Muxes                   |   62 |     0 |          0 |      8150 |  0.76 |
 | Unique Control Sets        |   87 |       |          0 |      8150 |  1.07 |
 +----------------------------+------+-------+------------+-----------+-------+
@@ -73,13 +73,13 @@ Table of Contents
 +--------------------------------------------+------+-------+------------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Prohibited | Available | Util% |
 +--------------------------------------------+------+-------+------------+-----------+-------+
-| Slice                                      | 1250 |     0 |          0 |      8150 | 15.34 |
-|   SLICEL                                   |  856 |     0 |            |           |       |
-|   SLICEM                                   |  394 |     0 |            |           |       |
-| LUT as Logic                               | 2971 |     0 |          0 |     20800 | 14.28 |
+| Slice                                      | 1221 |     0 |          0 |      8150 | 14.98 |
+|   SLICEL                                   |  831 |     0 |            |           |       |
+|   SLICEM                                   |  390 |     0 |            |           |       |
+| LUT as Logic                               | 2980 |     0 |          0 |     20800 | 14.33 |
 |   using O5 output only                     |    0 |       |            |           |       |
-|   using O6 output only                     | 2618 |       |            |           |       |
-|   using O5 and O6                          |  353 |       |            |           |       |
+|   using O6 output only                     | 2616 |       |            |           |       |
+|   using O5 and O6                          |  364 |       |            |           |       |
 | LUT as Memory                              |  453 |     0 |          0 |      9600 |  4.72 |
 |   LUT as Distributed RAM                   |  448 |     0 |            |           |       |
 |     using O5 output only                   |    0 |       |            |           |       |
@@ -90,10 +90,10 @@ Table of Contents
 |     using O6 output only                   |    1 |       |            |           |       |
 |     using O5 and O6                        |    4 |       |            |           |       |
 | Slice Registers                            | 3717 |     0 |          0 |     41600 |  8.94 |
-|   Register driven from within the Slice    | 2328 |       |            |           |       |
-|   Register driven from outside the Slice   | 1389 |       |            |           |       |
-|     LUT in front of the register is unused |  912 |       |            |           |       |
-|     LUT in front of the register is used   |  477 |       |            |           |       |
+|   Register driven from within the Slice    | 2325 |       |            |           |       |
+|   Register driven from outside the Slice   | 1392 |       |            |           |       |
+|     LUT in front of the register is unused |  796 |       |            |           |       |
+|     LUT in front of the register is used   |  596 |       |            |           |       |
 +--------------------------------------------+------+-------+------------+-----------+-------+
 
 
@@ -190,15 +190,15 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     | 3680 |        Flop & Latch |
-| LUT4     | 1222 |                 LUT |
-| LUT3     |  900 |                 LUT |
-| LUT6     |  695 |                 LUT |
+| LUT4     | 1217 |                 LUT |
+| LUT3     |  905 |                 LUT |
+| LUT6     |  701 |                 LUT |
 | RAMD64E  |  352 |  Distributed Memory |
 | CARRY4   |  265 |          CarryLogic |
-| LUT5     |  223 |                 LUT |
-| LUT2     |  213 |                 LUT |
+| LUT5     |  227 |                 LUT |
+| LUT2     |  223 |                 LUT |
 | RAMD32   |  160 |  Distributed Memory |
-| MUXF7    |  157 |               MuxFx |
+| MUXF7    |  158 |               MuxFx |
 | LUT1     |   71 |                 LUT |
 | MUXF8    |   62 |               MuxFx |
 | FDSE     |   37 |        Flop & Latch |

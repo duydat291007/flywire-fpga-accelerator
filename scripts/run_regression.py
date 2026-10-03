@@ -117,6 +117,9 @@ MUTANTS = [
      "                    wst <= W_CATCH;\n                end\n\n                W_CATCH:",
      "                    wst <= W_PEND;\n                end\n\n                W_CATCH:",
      "world", "catch check skipped after a motor window"),
+    ("world_corner_escape", "rtl/neural/fly_world.sv",
+     "3'd5: return 3'd3;", "3'd5: return 3'd4;",
+     "world", "cornered fly jumps back toward the threat instead of along the wall"),
     ("world_jump_toward_threat", "rtl/neural/fly_world.sv",
      "heading <= head_of(-sgn7(tdx), -sgn7(tdy));", "heading <= head_of(sgn7(tdx), sgn7(tdy));",
      "world", "escape jump heads toward the threat"),
@@ -128,7 +131,7 @@ MUTANTS = [
      "food_y <= clamp_add(fly_y, hdx(heading), 4'(FOOD_AHEAD));",
      "world", "food button places food on the wrong axis"),
     ("world_jump_no_retry", "rtl/neural/fly_world.sv",
-     "end else if (try_k == 3'd4) begin", "end else if (try_k == 3'd0) begin",
+     "end else if (try_k == 3'd6) begin", "end else if (try_k == 3'd0) begin",
      "fly_core", "jump gives up at a wall instead of trying other headings"),
     ("uart_lsb_msb", "rtl/uart/uart_tx.sv", "shreg     <= {1'b1, in_data, 1'b0};",
      "shreg     <= {1'b1, in_data[0], in_data[1], in_data[2], in_data[3], in_data[4], "

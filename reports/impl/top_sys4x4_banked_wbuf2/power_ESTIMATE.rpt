@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Fri Oct  2 11:18:05 2026
+| Date             : Fri Oct  2 14:21:44 2026
 | Host             : bland3 running 64-bit Ubuntu 26.04.1 LTS
 | Command          : report_power -file /mnt/c/Users/duyda/Desktop/personal_projects/fly_fpga/build/vivado/top_sys4x4_banked_wbuf2/power_ESTIMATE.rpt
 | Design           : basys3_top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.119        |
+| Total On-Chip Power (W)  | 0.120        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.046        |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.013 |        3 |       --- |             --- |
-| Slice Logic              |     0.004 |     8169 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     2971 |     20800 |           14.28 |
+| Slice Logic              |     0.005 |     8190 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     2980 |     20800 |           14.33 |
 |   CARRY4                 |    <0.001 |      265 |      8150 |            3.25 |
 |   LUT as Distributed RAM |    <0.001 |      448 |      9600 |            4.67 |
 |   Register               |    <0.001 |     3717 |     41600 |            8.94 |
-|   F7/F8 Muxes            |    <0.001 |      219 |     32600 |            0.67 |
+|   F7/F8 Muxes            |    <0.001 |      220 |     32600 |            0.67 |
 |   LUT as Shift Register  |    <0.001 |        5 |      9600 |            0.05 |
 |   Others                 |     0.000 |       91 |       --- |             --- |
-| Signals                  |     0.005 |     6178 |       --- |             --- |
+| Signals                  |     0.005 |     6198 |       --- |             --- |
 | Block RAM                |     0.022 |       32 |        50 |           64.00 |
 | DSPs                     |     0.001 |       16 |        90 |           17.78 |
 | I/O                      |    <0.001 |       31 |       106 |           29.25 |
 | Static Power             |     0.073 |          |           |                 |
-| Total                    |     0.119 |          |           |                 |
+| Total                    |     0.120 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.054 |       0.043 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.054 |       0.044 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |

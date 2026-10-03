@@ -1,39 +1,22 @@
 # FPGA fly project: setup and run steps
 
-## Where we left off (2026-10-02, 4:30 AM)
+## Status (2026-10-02)
 
-**Done:**
+The 256-neuron FlyWire design runs on the board. Both the 4×4 systolic build (+0.665 ns setup slack, 289 µs per update) and the serial baseline (+0.547 ns, 658 µs) meet 100 MHz. Everything is pushed to https://github.com/duydat291007/flywire-fpga-accelerator.
 
-- 256-neuron FlyWire design ran live on the board.
-- Pushed to GitHub: https://github.com/duydat291007/flywire-fpga-accelerator
-- Fixed three timing problems found while rebuilding the serial baseline (in `fly_world.sv` and `mvu_serial.sv`).
-- All cloud tests pass after the fixes, and the files are in the project folder.
+To publish future changes:
 
-**Next steps:**
+```bash
+cd ~/fly_fpga
+git add -A
+git commit -m "message"
+git push
+```
 
-1. In Ubuntu, one line at a time (about 40 minutes):
-   ```bash
-   cd ~/fly_fpga
-   source /opt/AMD/2025.2/Vivado/settings64.sh
-   bash scripts/vivado/xsim_run.sh directed 2>&1 | tee build/xsim_directed_v4.log
-   bash scripts/vivado/run_vivado.sh build serial top 2>&1 | tee build/vivado_serial_v6.log
-   bash scripts/vivado/run_vivado.sh build sys4x4_banked_wbuf2 top 2>&1 | tee build/vivado_top_v4.log
-   ```
-2. Tell Claude "done". Claude checks that both builds meet timing and updates the README numbers.
-3. Commit and push:
-   ```bash
-   git add -A
-   git commit -m "Timing fixes and current serial/systolic results"
-   git push
-   ```
-4. Program the new bitstream: plug in the board, attach it with usbipd (section A), then run `bash scripts/demo.sh`.
+Optional next steps:
 
-Last known results:
-
-| Build | Setup slack | Notes |
-|---|---|---|
-| Systolic 4×4 | +0.435 ns | before the latest world fix |
-| Serial | -0.221 ns | the latest fix targets this path |
+- Load the latest bitstream onto the board (section A).
+- Record a demo video.
 
 ## Where things are
 
@@ -76,7 +59,7 @@ Run each command on its own line and wait for it to finish before the next.
    | sw9..sw5 | which 8 neurons' voltages the dashboard shows |
    | btnC | reset |
 
-Powering off the board erases the design, so program it again next time.
+Programming over USB (demo.sh) lasts until power-off. To make the design load by itself at power-on, see section C.
 
 ## B. Rebuild and re-verify (after design changes)
 
@@ -92,7 +75,19 @@ bash scripts/vivado/run_vivado.sh build sys4x4_banked_wbuf2 top 2>&1 | tee build
 - **Serial baseline:** `bash scripts/vivado/run_vivado.sh build serial top`
 - **Vivado GUI project:** `vivado -mode batch -source scripts/vivado/create_project.tcl`, then open `build/vivado_gui/fly_fpga.xpr`.
 
-## C. Fresh machine (one-time setup)
+## C. Boot from flash (survives power-off)
+
+1. Build as usual. The build also writes `build/vivado/top_sys4x4_banked_wbuf2/basys3_top.bin`.
+2. With the board attached to WSL:
+   ```bash
+   bash scripts/vivado/run_vivado.sh flash
+   ```
+   This takes 1–3 minutes and should end with `Flash programmed and verified`.
+3. Unplug the board, move the mode jumper **JP1** to the top pair of pins, labelled **QSPI**, and plug it back in. The design starts by itself, and LED 5 lights within about a second.
+
+To go back, put JP1 on JTAG or USB; programming from the laptop works in any position.
+
+## D. Fresh machine (one-time setup)
 
 1. WSL Ubuntu with Vivado 2025.2 at `/opt/AMD/2025.2/Vivado`, including Artix-7 support. The installer needs the `en_US.UTF-8` locale, `libtinfo5` and `libncurses5`.
 2. Cable drivers, run inside Ubuntu:
@@ -130,5 +125,5 @@ bash scripts/vivado/run_vivado.sh build sys4x4_banked_wbuf2 top 2>&1 | tee build
 | LED 5 off | Board reset or power-cycled: program it again |
 | Window invisible or "COPY MODE" | `wsl --shutdown` in PowerShell, reopen Ubuntu, attach the board again |
 | `[200~` appears in a command | Paste glitch: Ctrl+C, then paste or type the line again |
-| Fly stuck in a corner with the threat on | Known world-rule limitation. Press btnR or turn sw2 off. |
+| Fly pinned near a wall with the threat on | Less common since the ±135° escape rule. Press btnR or turn sw2 off. |
 | git says `index.lock` exists | `rm -f ~/fly_fpga/.git/index.lock` |

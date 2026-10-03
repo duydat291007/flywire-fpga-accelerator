@@ -31,6 +31,9 @@ DY = (0, 1, 1, 1, 0, -1, -1, -1)
 # heading index for sign(dx), sign(dy): HEAD_OF[sy + 1][sx + 1]
 HEAD_OF = ((5, 6, 7), (4, 0, 0), (3, 2, 1))
 
+# heading offsets tried, in order, for an escape jump blocked by walls
+JUMP_OFFSETS = (0, 1, 7, 2, 6, 3, 5)
+
 # motor counter slots
 ESC, BACK, FWD, STL, STR, FEED = range(6)
 N_MOTOR = 6
@@ -139,8 +142,10 @@ class World:
                 dx, dy, _ = self.rel(self.threat)
                 if dx or dy:
                     self.heading = HEAD_OF[sgn(-dy) + 1][sgn(-dx) + 1]
-            # jump away; if a wall blocks, try the neighbouring headings
-            for off in (0, 1, 7, 2, 6):
+            # jump away; if a wall blocks, try neighbouring headings, widening
+            # to +-135 degrees so a cornered fly escapes along a wall. Only the
+            # heading straight back toward the threat (+180) is never tried.
+            for off in JUMP_OFFSETS:
                 h = (self.heading + off) & 7
                 if not self.step_fly(h, C.JUMP_DIST):
                     self.heading = h

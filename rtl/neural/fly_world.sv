@@ -183,14 +183,18 @@ module fly_world
     logic            go_back;
     logic            pend_food, pend_threat;
 
-    // Offsets tried for a jump when a wall blocks: 0, +1, -1, +2, -2
+    // Offsets tried for a jump when a wall blocks: 0, +1, -1, +2, -2, +3, -3
+    // (never +4, straight back toward the threat). The +-3 tries let a fly
+    // trapped in a corner escape along a wall (world.py JUMP_OFFSETS).
     function automatic logic [2:0] jump_off(input logic [2:0] k);
         case (k)
             3'd0: return 3'd0;
             3'd1: return 3'd1;
             3'd2: return 3'd7;
             3'd3: return 3'd2;
-            default: return 3'd6;
+            3'd4: return 3'd6;
+            3'd5: return 3'd3;
+            default: return 3'd5;
         endcase
     endfunction
 
@@ -273,7 +277,7 @@ module fly_world
                         fly_y   <= 6'($signed({1'b0, fly_y}) + $signed(hdy(jh)) * $signed({1'b0, jn}));
                         heading <= jh;
                         wst     <= W_WEND;
-                    end else if (try_k == 3'd4) begin
+                    end else if (try_k == 3'd6) begin
                         wst <= W_WEND;
                     end else begin
                         try_k <= try_k + 1'b1;

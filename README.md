@@ -25,8 +25,8 @@ The FPGA streams its state over USB to a live dashboard.
 
 | Engine | LUT | FF | DSP | BRAM tiles | Setup / hold slack @ 100 MHz | Cycles per neural update | Time |
 |---|---|---|---|---|---|---|---|
-| **4×4 systolic** (banked, 2 weight buffers) | 3,424 | 3,717 | 16 | 32 | +0.665 / +0.033 ns | **28,937** | **289 µs** |
-| Serial MAC baseline | 3,006 | 3,474 | 6 | 32 | +0.547 / +0.039 ns | 65,800 | 658 µs |
+| **4×4 systolic** (banked, 2 weight buffers) | 3,433 | 3,717 | 16 | 32 | +0.904 / +0.029 ns | **28,937** | **289 µs** |
+| Serial MAC baseline | 3,012 | 3,474 | 6 | 32 | +0.984 / +0.058 ns | 65,800 | 658 µs |
 
 - **Speedup:** the systolic engine is **2.3× faster** per 256-neuron update than the serial baseline at the same 100 MHz clock. It costs about 420 more LUTs and 10 more DSP slices.
 - **Accelerator benchmarks:** standalone runs for every array configuration (2×2 to 8×8, banked or not, 1–3 weight buffers) are in [`reports/impl/results.md`](reports/impl/results.md), with cycle counts in [`reports/perf/mvu_cycles.md`](reports/perf/mvu_cycles.md).
@@ -37,7 +37,7 @@ The FPGA streams its state over USB to a live dashboard.
 | Scenario | FlyWire circuit | All synapses removed |
 |---|---|---|
 | Food placed ahead: fly eats | 35/40 | 0/40 |
-| Threat placed beside it: fly escapes | 39/40 | 29/40 |
+| Threat placed beside it: fly escapes | 38/40 | 29/40 |
 
 ## Status
 
@@ -75,6 +75,7 @@ bash scripts/setup_python.sh                                           # dashboa
 bash scripts/vivado/xsim_run.sh directed                               # XSim test suite
 bash scripts/vivado/run_vivado.sh build sys4x4_banked_wbuf2 top        # bitstream
 bash scripts/demo.sh                                                   # program the board and open the dashboard
+bash scripts/vivado/run_vivado.sh flash                                # optional: boot from flash at power-on (JP1 = QSPI)
 python3 scripts/run_regression.py --mutants                            # open-source regression (Icarus/Verilator)
 vivado -mode batch -source scripts/vivado/create_project.tcl           # optional Vivado GUI project
 ```
@@ -93,8 +94,7 @@ The subcircuit keeps only about 10% of each neuron's real inputs. This is an eng
 
 ## Known limitations
 
-- The fly can get trapped in an arena corner while the threat sits next to it: every jump direction is blocked by walls. This is a world-rule limitation.
-- The design is volatile: it must be reprogrammed after power-off (booting from the on-board flash isn't set up yet).
+- Near walls the fly still spends some time pinned. An escape jump tries headings up to ±135° away from the threat, so it can slide along a wall out of a corner; this cut corner time by about 25–65% in long simulations, but did not remove it entirely.
 
 ## Data and credits
 

@@ -12,5 +12,5 @@ Post-route numbers from scripts/vivado/build.tcl. `mvu` rows: the matrix-vector 
 | mvu | sys4x4_banked_wbuf3 | 2025.2 | xc7a35tcpg236-1 | 923 | 903 | 16 | 2 | 188 | 1.514 | 0.029 | met @100MHz | 1269 | 12.69 |
 | mvu | sys4x4_simple | 2025.2 | xc7a35tcpg236-1 | 833 | 882 | 16 | 1 | 92 | 1.719 | 0.092 | met @100MHz | 6721 | 67.21 |
 | mvu | sys8x8_banked_wbuf2 | 2025.2 | xc7a35tcpg236-1 | 1628 | 1427 | 64 | 4 | 580 | 1.037 | 0.078 | met @100MHz | 905 | 9.05 |
-| top | serial | 2025.2 | xc7a35tcpg236-1 | 3006 | 3474 | 6 | 32 | 352 | 0.547 | 0.039 | met @100MHz | 65800 | 658.00 |
-| top | sys4x4_banked_wbuf2 | 2025.2 | xc7a35tcpg236-1 | 3424 | 3717 | 16 | 32 | 453 | 0.665 | 0.033 | met @100MHz | 28937 | 289.37 |
+| top | serial | 2025.2 | xc7a35tcpg236-1 | 3012 | 3474 | 6 | 32 | 352 | 0.984 | 0.058 | met @100MHz | 65800 | 658.00 |
+| top | sys4x4_banked_wbuf2 | 2025.2 | xc7a35tcpg236-1 | 3433 | 3717 | 16 | 32 | 453 | 0.904 | 0.029 | met @100MHz | 28937 | 289.37 |

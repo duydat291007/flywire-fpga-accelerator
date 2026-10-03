@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Fri Oct  2 11:14:13 2026
+| Date             : Fri Oct  2 14:26:51 2026
 | Host             : bland3 running 64-bit Ubuntu 26.04.1 LTS
 | Command          : report_power -file /mnt/c/Users/duyda/Desktop/personal_projects/fly_fpga/build/vivado/top_serial/power_ESTIMATE.rpt
 | Design           : basys3_top
@@ -52,15 +52,15 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |        3 |       --- |             --- |
-| Slice Logic              |     0.004 |     7272 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     2654 |     20800 |           12.76 |
+| Clocks                   |     0.014 |        3 |       --- |             --- |
+| Slice Logic              |     0.004 |     7288 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     2660 |     20800 |           12.79 |
 |   CARRY4                 |    <0.001 |      179 |      8150 |            2.20 |
 |   Register               |    <0.001 |     3474 |     41600 |            8.35 |
 |   LUT as Distributed RAM |    <0.001 |      352 |      9600 |            3.67 |
-|   F7/F8 Muxes            |    <0.001 |      222 |     32600 |            0.68 |
+|   F7/F8 Muxes            |    <0.001 |      225 |     32600 |            0.69 |
 |   Others                 |     0.000 |       43 |       --- |             --- |
-| Signals                  |     0.004 |     5169 |       --- |             --- |
+| Signals                  |     0.004 |     5185 |       --- |             --- |
 | Block RAM                |     0.043 |       32 |        50 |           64.00 |
 | DSPs                     |    <0.001 |        6 |        90 |            6.67 |
 | I/O                      |    <0.001 |       31 |       106 |           29.25 |
@@ -147,7 +147,7 @@ Table of Contents
 | basys3_top      |     0.065 |
 |   u_core        |     0.057 |
 |     g_mvu.u_mvu |     0.031 |
-|     u_lif       |     0.003 |
+|     u_lif       |     0.004 |
 |     u_world     |     0.005 |
 |   u_tel         |     0.006 |
 +-----------------+-----------+

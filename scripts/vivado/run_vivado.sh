@@ -4,7 +4,8 @@
 #   scripts/vivado/run_vivado.sh find
 #   scripts/vivado/run_vivado.sh build <config> [top|mvu]
 #   scripts/vivado/run_vivado.sh compare
-#   scripts/vivado/run_vivado.sh program [bitfile]
+#   scripts/vivado/run_vivado.sh program [bitfile]   (volatile: until power-off)
+#   scripts/vivado/run_vivado.sh flash [binfile]     (boot from flash; set JP1 = QSPI)
 #
 # Vivado is found from $VIVADO_SETTINGS (path to settings64.sh), PATH, or the
 # usual install roots. Programming from WSL needs the board's USB device passed
@@ -42,5 +43,6 @@ compare)
     done
     python3 scripts/collect_impl.py ;;
 program) $V -source scripts/vivado/program.tcl -tclargs "${2:-build/vivado/top_sys4x4_banked_wbuf2/basys3_top.bit}" ;;
-*) echo "usage: $0 find | build <config> [top|mvu] | compare | program [bit]"; exit 2 ;;
+flash)   $V -source scripts/vivado/program_flash.tcl -tclargs "${2:-build/vivado/top_sys4x4_banked_wbuf2/basys3_top.bin}" ;;
+*) echo "usage: $0 find | build <config> [top|mvu] | compare | program [bit] | flash [bin]"; exit 2 ;;
 esac

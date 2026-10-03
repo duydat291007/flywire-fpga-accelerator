@@ -63,3 +63,10 @@ set_false_path -to   [get_ports {led[*] RsTx}]
 ## Configuration
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
+
+## Boot from the on-board Quad-SPI flash (as in Digilent's master XDC).
+## Programming the flash (scripts/vivado/run_vivado.sh flash) and setting
+## jumper JP1 to QSPI makes the design load by itself at power-on.
+set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
+set_property BITSTREAM.CONFIG.CONFIGRATE 33 [current_design]
+set_property CONFIG_MODE SPIx4 [current_design]

@@ -78,7 +78,7 @@ The fly has a position and one of 8 headings. Sensing is egocentric: each target
 
 Every 8 timesteps, one action is chosen from the motor spike counts, in this order of priority:
 
-1. **Escape jump:** 1 or more giant-fiber spikes make the fly jump 6 cells away from the threat.
+1. **Escape jump:** 1 or more giant-fiber spikes make the fly jump 6 cells away from the threat. If walls block that direction, it tries headings up to ±135° away, so a cornered fly can escape along a wall.
 2. **Eat:** 2 or more proboscis motor spikes while the food is within taste range.
 3. **Turn:** if the steering difference (right − left) is at least 2; otherwise a random turn about 1 in 8 of the time.
 4. **Walk:** backward if MDN − DNp09 ≥ 2, otherwise forward.
@@ -95,6 +95,6 @@ The buttons place objects relative to the fly:
 | Scenario | FlyWire circuit | Lesioned |
 |---|---|---|
 | Food: ate the food | 35/40, median 21 steps | 0/40 |
-| Threat: escaped | 39/40, first jump after a median of 6 steps | 29/40 |
+| Threat: escaped | 38/40, first jump after a median of 6 steps | 29/40 |
 
 These results hold across weight gains of ×1, ×2 and ×4, so they don't depend on fine-tuning.

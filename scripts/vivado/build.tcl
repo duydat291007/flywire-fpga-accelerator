@@ -128,6 +128,9 @@ close $fh
 
 if {$tgt eq "top"} {
     write_bitstream -force $out/basys3_top.bit
+    # Flash image for power-on boot from the 32 Mbit Quad-SPI flash
+    write_cfgmem -force -format bin -interface SPIx4 -size 4 \
+        -loadbit [list up 0x0 $out/basys3_top.bit] -file $out/basys3_top.bin
     puts "Bitstream: $out/basys3_top.bit"
 }
 puts "Reports in $out"
