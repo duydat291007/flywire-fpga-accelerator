@@ -106,4 +106,4 @@ The subcircuit keeps only about 10% of each neuron's real inputs. This is an eng
 
 Connectome data: FlyWire Consortium. Dorkenwald et al., *Neuronal wiring diagram of an adult brain*, Nature 2024; Schlegel et al., *Whole-brain annotation and multi-connectome cell typing of Drosophila*, Nature 2024. Used under the FlyWire citation guidelines. The raw downloads are not included (see `docs/flywire.md` to re-download); the derived 256-neuron subset is in `model/flywire/out/`.
 
-Author: Dat Le, Electrical Engineering, Bucknell University.
+Author: Duy Dat Le, Electrical Engineering, Bucknell University.
